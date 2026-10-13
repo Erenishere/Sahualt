@@ -1,0 +1,15 @@
+version: dense-retriever-prototype-v1
+status: DRAFT_NOT_OFFICIAL_BENCHMARK
+adr: ADR-ML-003-draft
+migration_id: 20260926_003_text_dense_prototype_v1
+retriever_id: postgresql-dense-prototype-v1
+encoder_id: toy-text-encoder-v1
+encoder_revision: deterministic-keyword-v1
+vector_dimension: 3
+similarity_metric: cosine
+search_policy: exact_pgvector_scan
+normalization: l2_unit
+document_schema_version: product-text-v1
+eval_text_v1_execution: blocked_until_label_freeze
+future_encoder_candidate: bge-m3-or-validated-alternative-not-selected
+notes: ToyTextEncoder only; RealTextEncoder and ANN indexes are future gates.

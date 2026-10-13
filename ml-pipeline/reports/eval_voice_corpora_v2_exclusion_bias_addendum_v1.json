@@ -1,0 +1,294 @@
+{
+  "report_id": "EVAL-VOICE-CORPORA-V2-EXCLUSION-BIAS-ADDENDUM-V1",
+  "report_version": 1,
+  "status": "SUPPLEMENTAL_DESCRIPTIVE_AUDIT_DOES_NOT_AMEND_FREEZE",
+  "generated_on": "2026-10-12",
+  "scope": {
+    "source_key": "urduspeech",
+    "repository": "ASLP-lab/UrduSpeech",
+    "revision": "16dd380cfd9049a3db7f06a98e878086916bf833",
+    "source_registry_sha256": "1604512c9b39776a77b43ee878e4c8d4ff6f7d238f52c439929e7d17941c5580",
+    "metadata_evidence_checksum": "6f30e92613a25fef6a87fab8e7df96d2f294dae31b54fa33d844ff152ede85e0",
+    "metadata_evidence_checksum_matches_prior_audit": true,
+    "audio_downloaded": false,
+    "asr_executed": false,
+    "fine_tuning_performed": false,
+    "raw_transcript_strings_persisted": false,
+    "frozen_selection_changed": false,
+    "v1_evidence_changed": false,
+    "readiness_rules_changed": false
+  },
+  "input_artifact_sha256": {
+    "reports/eval_voice_corpora_v2_source_audit.json": "128e619150698c58f98d80c62c5d8bf56cf4242102645d6bc4b99806d81fc479",
+    "reports/eval_voice_corpora_v2_readiness.json": "1b9cc82fd3eae0ab4415169559787aa97c9bd62ac9e806112810fb9da0f35f73",
+    "reports/eval_voice_corpora_v2_selection_exclusions.json": "fd37e97ab2d078deeb85557be2e52b4f7ffb15db9b65c5dc3085cbde6eb03842",
+    "reports/eval_voice_corpora_v2_selection_exclusions.md": "510ff57bbab6df1be07563c9d2613279f545334c5ad19c7656503f789c9e4508",
+    "configs/corpora/eval_voice_corpora_v2_manifest_freeze.json": "625ea4468eb23c3149d54bcc88abe8ce695f039e59f77e14c33ee53aeabd8b6e",
+    "configs/gates/eval_voice_corpora_v2_manifest_freeze.json": "0b1b465899cdab0318d45878e60b0d7c9d09817df67a93f51c9ea1305ab499d7",
+    "configs/gates/eval_voice_corpora_v2_readiness.json": "2f61b59532ce5703b0b02af9466a9533db3aa1b79629c29ab0633e3753b25d15"
+  },
+  "population_reconciliation": {
+    "pinned_inventory_records": 4170,
+    "exact_transcription_ground_truth_matches": 3791,
+    "transcript_disagreements_full_inventory": 379,
+    "transcript_disagreement_rate_percent": 9.09,
+    "prior_preview": {
+      "status": "PREVIEW_NOT_FROZEN",
+      "selection_population": "Pinned inventory rows eligible under the prior duration filter; transcript agreement was not an exclusion criterion for this preview.",
+      "selected_count": 544,
+      "selected_by_subset": {
+        "standard_urdu": 200,
+        "code_switched": 200,
+        "pakistani_english": 144
+      },
+      "disputed_rows_within_preview": 47,
+      "disputed_rows_within_preview_by_subset": {
+        "standard_urdu": 17,
+        "code_switched": 27,
+        "pakistani_english": 3
+      },
+      "exact_match_rows_within_preview": 497,
+      "full_inventory_disagreements_not_in_preview_sample": 332
+    },
+    "frozen_selection_after_transcript_exclusion": {
+      "selected_count": 541,
+      "selected_by_subset": {
+        "standard_urdu": 200,
+        "code_switched": 200,
+        "pakistani_english": 141
+      },
+      "prior_preview_ids_retained": 497,
+      "new_ids_selected_as_replacements": 44,
+      "target_shortfall": {
+        "pakistani_english": {
+          "target": 200,
+          "eligible_after_transcript_exclusion": 141,
+          "shortfall": 59
+        }
+      }
+    },
+    "per_subset": {
+      "standard_urdu": {
+        "language": "ur",
+        "inventory_records": 2173,
+        "disagreements": 185,
+        "disagreement_rate_percent": 8.51,
+        "prior_preview_selected": 200,
+        "prior_preview_disagreements": 17,
+        "frozen_selected": 200,
+        "prior_preview_ids_retained": 183,
+        "replacement_ids_selected": 17,
+        "target_shortfall": 0
+      },
+      "code_switched": {
+        "language": "ur-en",
+        "inventory_records": 1853,
+        "disagreements": 191,
+        "disagreement_rate_percent": 10.31,
+        "prior_preview_selected": 200,
+        "prior_preview_disagreements": 27,
+        "frozen_selected": 200,
+        "prior_preview_ids_retained": 173,
+        "replacement_ids_selected": 27,
+        "target_shortfall": 0
+      },
+      "pakistani_english": {
+        "language": "en-pk",
+        "inventory_records": 144,
+        "disagreements": 3,
+        "disagreement_rate_percent": 2.08,
+        "prior_preview_selected": 144,
+        "prior_preview_disagreements": 3,
+        "frozen_selected": 141,
+        "prior_preview_ids_retained": 141,
+        "replacement_ids_selected": 0,
+        "target_shortfall": 59
+      }
+    }
+  },
+  "disagreement_category_counts": {
+    "MISSING_OR_ADDED_WORDS": 97,
+    "PUNCTUATION_OR_WHITESPACE_ONLY": 2,
+    "SCRIPT_PROFILE_CHANGE": 172,
+    "SEMANTIC_REVIEW_REQUIRED": 29,
+    "SPELLING_OR_TOKEN_SUBSTITUTION": 79
+  },
+  "disagreement_category_counts_by_subset": {
+    "standard_urdu": {
+      "MISSING_OR_ADDED_WORDS": 57,
+      "PUNCTUATION_OR_WHITESPACE_ONLY": 1,
+      "SCRIPT_PROFILE_CHANGE": 62,
+      "SEMANTIC_REVIEW_REQUIRED": 22,
+      "SPELLING_OR_TOKEN_SUBSTITUTION": 43
+    },
+    "code_switched": {
+      "MISSING_OR_ADDED_WORDS": 40,
+      "PUNCTUATION_OR_WHITESPACE_ONLY": 1,
+      "SCRIPT_PROFILE_CHANGE": 108,
+      "SEMANTIC_REVIEW_REQUIRED": 7,
+      "SPELLING_OR_TOKEN_SUBSTITUTION": 35
+    },
+    "pakistani_english": {
+      "SCRIPT_PROFILE_CHANGE": 2,
+      "SPELLING_OR_TOKEN_SUBSTITUTION": 1
+    }
+  },
+  "script_profile_distribution": {
+    "method": "For each of the two source transcript fields, collect Unicode script labels from alphabetic codepoints using Unicode character names: LATIN, ARABIC, DEVANAGARI, CYRILLIC, GREEK, or OTHER. Ignore punctuation, combining marks, and numerals. This is a descriptive heuristic only; it does not adjudicate language, correctness, or meaning.",
+    "transcription_field": {
+      "ARABIC": 122,
+      "ARABIC+DEVANAGARI": 50,
+      "ARABIC+DEVANAGARI+LATIN": 95,
+      "ARABIC+DEVANAGARI+LATIN+OTHER": 16,
+      "ARABIC+LATIN": 92,
+      "ARABIC+LATIN+OTHER": 1,
+      "LATIN": 3
+    },
+    "ground_truth_field": {
+      "ARABIC": 183,
+      "ARABIC+DEVANAGARI+LATIN": 1,
+      "ARABIC+LATIN": 192,
+      "LATIN": 3
+    },
+    "record_level_field_profile_relation": {
+      "PROFILE_DIFFERS": 172,
+      "SAME_PROFILE": 207
+    },
+    "transcription_to_ground_truth_profile_pairs": {
+      "ARABIC -> ARABIC": 121,
+      "ARABIC -> ARABIC+LATIN": 1,
+      "ARABIC+DEVANAGARI -> ARABIC": 50,
+      "ARABIC+DEVANAGARI+LATIN -> ARABIC": 4,
+      "ARABIC+DEVANAGARI+LATIN -> ARABIC+DEVANAGARI+LATIN": 1,
+      "ARABIC+DEVANAGARI+LATIN -> ARABIC+LATIN": 90,
+      "ARABIC+DEVANAGARI+LATIN+OTHER -> ARABIC": 2,
+      "ARABIC+DEVANAGARI+LATIN+OTHER -> ARABIC+LATIN": 14,
+      "ARABIC+LATIN -> ARABIC": 6,
+      "ARABIC+LATIN -> ARABIC+LATIN": 84,
+      "ARABIC+LATIN -> LATIN": 2,
+      "ARABIC+LATIN+OTHER -> ARABIC+LATIN": 1,
+      "LATIN -> ARABIC+LATIN": 2,
+      "LATIN -> LATIN": 1
+    },
+    "deterministic_disagreement_category_is_independent_of_this_heuristic": true
+  },
+  "published_speaker_label_counts_for_disagreements": {
+    "identity_status": "UNVERIFIED_PUBLISHED_LABELS; labels are reported within their source subset and are not treated as verified or cross-subset identities.",
+    "standard_urdu": {
+      "SPEAKER_000": 44,
+      "SPEAKER_001": 16,
+      "SPEAKER_002": 15,
+      "SPEAKER_003": 11,
+      "SPEAKER_004": 18,
+      "SPEAKER_005": 18,
+      "SPEAKER_006": 6,
+      "SPEAKER_008": 7,
+      "SPEAKER_009": 1,
+      "SPEAKER_010": 2,
+      "SPEAKER_011": 2,
+      "SPEAKER_012": 15,
+      "SPEAKER_013": 3,
+      "SPEAKER_014": 1,
+      "SPEAKER_015": 2,
+      "SPEAKER_016": 2,
+      "SPEAKER_017": 2,
+      "SPEAKER_018": 1,
+      "SPEAKER_019": 3,
+      "SPEAKER_021": 1,
+      "SPEAKER_026": 1,
+      "SPEAKER_027": 1,
+      "SPEAKER_03": 1,
+      "SPEAKER_034": 1,
+      "SPEAKER_035": 1,
+      "SPEAKER_037": 3,
+      "SPEAKER_038": 2,
+      "SPEAKER_039": 2,
+      "SPEAKER_040": 1,
+      "SPEAKER_042": 1,
+      "SPEAKER_044": 1
+    },
+    "code_switched": {
+      "SPEAKER_000": 22,
+      "SPEAKER_001": 62,
+      "SPEAKER_002": 9,
+      "SPEAKER_003": 5,
+      "SPEAKER_004": 28,
+      "SPEAKER_005": 13,
+      "SPEAKER_006": 17,
+      "SPEAKER_008": 7,
+      "SPEAKER_009": 1,
+      "SPEAKER_011": 2,
+      "SPEAKER_012": 11,
+      "SPEAKER_014": 1,
+      "SPEAKER_015": 1,
+      "SPEAKER_016": 1,
+      "SPEAKER_019": 5,
+      "SPEAKER_024": 2,
+      "SPEAKER_028": 1,
+      "SPEAKER_035": 1,
+      "SPEAKER_041": 1,
+      "SPEAKER_044": 1
+    },
+    "pakistani_english": {
+      "SPEAKER_003": 1,
+      "SPEAKER_004": 1,
+      "SPEAKER_005": 1
+    }
+  },
+  "acquisition_gate": {
+    "status": "BLOCKED",
+    "unchanged": true,
+    "manifest_freeze_verifier": "METADATA_MANIFESTS_FROZEN_ACQUISITION_BLOCKED",
+    "existing_readiness_verifier": "BLOCKED",
+    "decision_rows_verified": 4170,
+    "frozen_manifest_counts_verified": {
+      "standard_urdu": 200,
+      "code_switched": 200,
+      "pakistani_english": 141
+    },
+    "authority": "configs/gates/eval_voice_corpora_v2_manifest_freeze.json",
+    "source_rights_status_authority_unchanged": true,
+    "source_rights_status_changed": false,
+    "checkpoint_independence_status_changed": false,
+    "required_next_evidence": [
+      "UrduSpeech source-media rights and local evaluation authorization review",
+      "Checkpoint training-data exposure assessment for UrduSpeech and other selected sources",
+      "Source-specific manifests for South Asian English, Pashto, and Common Voice Sindhi before acquisition eligibility",
+      "Approved and consented fresh Sindhi recordings under SINDHI-HOLDOUT-V1"
+    ]
+  },
+  "authoritative_source_status_snapshot": {
+    "authority_path": "configs/corpora/eval_voice_corpora_v2_manifest_freeze.json",
+    "copied_without_reinterpretation": true,
+    "urduspeech": {
+      "rights_status": "PENDING_SOURCE_MEDIA_RIGHTS_REVIEW",
+      "local_asr_evaluation": "PENDING_ORIGINAL_SOURCE_MEDIA_RIGHTS_REVIEW",
+      "evaluation_independence": "NOT_VERIFIED",
+      "acquisition_status": "BLOCKED"
+    },
+    "south_asian_english": {
+      "local_asr_evaluation": "CONDITIONALLY_ALLOWED",
+      "selected_manifest_frozen": false,
+      "acquisition_status": "BLOCKED_UNTIL_SELECTED_MANIFEST_FREEZE"
+    },
+    "pashto_audio_visual": {
+      "rights_status": "PENDING_CONSENT_AND_REDISTRIBUTION_REVIEW",
+      "local_asr_evaluation": "PENDING_OWNER_CONSENT_DOCUMENTATION_REVIEW",
+      "evaluation_status": "QUARANTINED_AUDIT_ONLY",
+      "evaluation_independence": "NOT_VERIFIED",
+      "acquisition_status": "BLOCKED"
+    },
+    "common_voice_27_sindhi": {
+      "local_asr_evaluation": "ALLOWED_BY_STATED_INTENDED_USE",
+      "evaluation_status": "REFERENCE_ONLY",
+      "evaluation_independence": "NOT_VERIFIED",
+      "acquisition_status": "BLOCKED_UNTIL_SELECTED_MANIFEST_FREEZE"
+    },
+    "sindhi_holdout_v1": {
+      "protocol_status": "APPROVED_DATA_PENDING",
+      "local_asr_evaluation": "ALLOWED_ONLY_WITH_RECORDED_SPEAKER_PERMISSION",
+      "selected_manifest_frozen": false,
+      "acquisition_gate_status": "BLOCKED"
+    }
+  }
+}

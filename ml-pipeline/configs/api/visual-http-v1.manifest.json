@@ -1,0 +1,10 @@
+{
+  "contract_version": "visual-http-v1",
+  "status": "FROZEN",
+  "scope": "visual-only-internal-http-contract-not-evaluation-data",
+  "openapi_path": "configs/api/visual-http-v1.openapi.json",
+  "openapi_sha256": "9c6fe17c1fd69190734b47351fe148cf85ac8ae1999df59e4a2b8493718e00a9",
+  "serialization": "UTF-8, sorted JSON keys, indent=2, LF, one trailing newline",
+  "identity_scope": "external",
+  "text_retrieval_status": "BLOCKED_PENDING_GENUINE_QUERY_AND_RELEVANCE_FREEZES"
+}

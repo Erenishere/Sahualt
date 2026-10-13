@@ -1,0 +1,36 @@
+{
+  "model": "fashionclip",
+  "embedding_version": "fashionclip-vit-b32-7e3ba62ce16b-891121bf09c6-v1",
+  "results": [
+    {
+      "product_id": "BLK231001",
+      "score": 0.8630138635635376,
+      "matched_image_id": "BLK231001/image_1.jpg",
+      "matched_image_path": "Khaadi_Data/images/BLK231001/image_1.jpg"
+    },
+    {
+      "product_id": "ACA231001",
+      "score": 0.8606060743331909,
+      "matched_image_id": "ACA231001/image_0.jpg",
+      "matched_image_path": "Khaadi_Data/images/ACA231001/image_0.jpg"
+    },
+    {
+      "product_id": "ALA230827",
+      "score": 0.8592949509620667,
+      "matched_image_id": "ALA230827/image_2.jpg",
+      "matched_image_path": "Khaadi_Data/images/ALA230827/image_2.jpg"
+    },
+    {
+      "product_id": "ALK231009",
+      "score": 0.8540025949478149,
+      "matched_image_id": "ALK231009/image_2.jpg",
+      "matched_image_path": "Khaadi_Data/images/ALK231009/image_2.jpg"
+    },
+    {
+      "product_id": "BCH231004",
+      "score": 0.8514034748077393,
+      "matched_image_id": "BCH231004/image_3.jpg",
+      "matched_image_path": "Khaadi_Data/images/BCH231004/image_3.jpg"
+    }
+  ]
+}

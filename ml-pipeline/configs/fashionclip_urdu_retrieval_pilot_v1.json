@@ -1,0 +1,52 @@
+{
+  "pilot_version": "FASHIONCLIP-URDU-RETRIEVAL-PILOT-V1",
+  "gallery": {
+    "fixture": "khaadi-v1",
+    "products": 400,
+    "retained_images": 2093,
+    "source_archive_sha256": "bbb0a5b3eed1bfbe6dd7c2add33cff7d0420db82e1d9f961ecdd61e1d391119e",
+    "image_manifest_sha256": "3b9ea0b9365ea196b8a67b91aca0e28f7ad8ac42aba1fef903fa428e636be994",
+    "visual_audit_sha256": "052d578042fdfa26f9c6fff6821fffb494732b45ddae57f24fb1cdd1e9685ad5"
+  },
+  "models": {
+    "openclip": {
+      "identifier": "laion/CLIP-ViT-B-32-laion2B-s34B-b79K",
+      "revision": "1a25a446712ba5ee05982a381eed697ef9b435cf",
+      "architecture": "ViT-B-32",
+      "weights_file": "open_clip_model.safetensors"
+    },
+    "fashionclip": {
+      "identifier": "patrickjohncyh/fashion-clip",
+      "revision": "7e3ba62ce16b379a1ab479346b66f192e76f51b7",
+      "architecture": "ViT-B-32",
+      "weights_file": "model.safetensors"
+    }
+  },
+  "query_set": {
+    "required_count": 30,
+    "translation_review": "human-verified English counterpart required",
+    "relevance_review": "human-annotated non-empty Khaadi product IDs required",
+    "speaker_identity": "not collected; this is a text-query retrieval pilot"
+  },
+  "ranking": {
+    "embedding_normalization": "l2-float32-after-float64-norm",
+    "similarity": "normalized-inner-product-cosine",
+    "product_aggregation": "maximum-image-similarity",
+    "ties": "product-id-then-image-id-ascending",
+    "top_k": 5
+  },
+  "evaluation": {
+    "primary_track": "human-verified-English-counterpart",
+    "secondary_track": "original-Urdu-direct-embedding",
+    "metrics": ["precision_at_1", "recall_at_5", "ndcg_at_5"],
+    "failed_inference_metric": "failed_query_rate",
+    "latency": "serial-query-embedding-plus-full-gallery-ranking"
+  },
+  "authorization": {
+    "scope": "existing locally verified Khaadi evaluation fixture only",
+    "external_dataset_acquisition": false,
+    "audio_or_asr": false,
+    "fine_tuning": false,
+    "production_promotion": false
+  }
+}

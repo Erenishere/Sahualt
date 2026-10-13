@@ -1,0 +1,816 @@
+{
+  "reviewed_at": "2026-09-06T12:08:25.184912+00:00",
+  "sampling": "First five incorrect P@1 queries per model sorted by query image_id; no benchmark exclusions or scores changed.",
+  "causal_limit": "Visible similarities are observational. No attention, crop or background ablation was performed.",
+  "models": {
+    "openclip": {
+      "p1_errors": 114,
+      "weak_or_incorrect_queries": 334,
+      "reviewed_p1_errors": 5
+    },
+    "fashionclip": {
+      "p1_errors": 111,
+      "weak_or_incorrect_queries": 337,
+      "reviewed_p1_errors": 5
+    }
+  },
+  "reviewed_examples": [
+    {
+      "model": "openclip",
+      "query": {
+        "image_id": "ACA231001/image_1.jpg",
+        "image_path": "Khaadi_Data/images/ACA231001/image_1.jpg",
+        "product_id": "ACA231001"
+      },
+      "top_images": [
+        {
+          "image_id": "ALA230827/image_2.jpg",
+          "image_path": "Khaadi_Data/images/ALA230827/image_2.jpg",
+          "product_id": "ALA230827",
+          "score": 0.8564326763153076
+        },
+        {
+          "image_id": "BLK231001/image_1.jpg",
+          "image_path": "Khaadi_Data/images/BLK231001/image_1.jpg",
+          "product_id": "BLK231001",
+          "score": 0.8561234474182129
+        },
+        {
+          "image_id": "ALK231009/image_2.jpg",
+          "image_path": "Khaadi_Data/images/ALK231009/image_2.jpg",
+          "product_id": "ALK231009",
+          "score": 0.8420054316520691
+        },
+        {
+          "image_id": "MLK231002/image_4.jpg",
+          "image_path": "Khaadi_Data/images/MLK231002/image_4.jpg",
+          "product_id": "MLK231002",
+          "score": 0.841876208782196
+        },
+        {
+          "image_id": "ACA231001/image_0.jpg",
+          "image_path": "Khaadi_Data/images/ACA231001/image_0.jpg",
+          "product_id": "ACA231001",
+          "score": 0.8400641083717346
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "ALA230827/image_2.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALA230827/image_2.jpg",
+          "product_id": "ALA230827",
+          "score": 0.8564326763153076
+        },
+        {
+          "matched_image_id": "BLK231001/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/BLK231001/image_1.jpg",
+          "product_id": "BLK231001",
+          "score": 0.8561234474182129
+        },
+        {
+          "matched_image_id": "ALK231009/image_2.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALK231009/image_2.jpg",
+          "product_id": "ALK231009",
+          "score": 0.8420054316520691
+        },
+        {
+          "matched_image_id": "MLK231002/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/MLK231002/image_4.jpg",
+          "product_id": "MLK231002",
+          "score": 0.841876208782196
+        },
+        {
+          "matched_image_id": "ACA231001/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/ACA231001/image_0.jpg",
+          "product_id": "ACA231001",
+          "score": 0.8400641083717346
+        }
+      ],
+      "observed_categories": [
+        "same garment type but different product"
+      ],
+      "observation": "Query shows a navy/white floral outfit from the rear with a large translucent scarf. Top-1 is a teal/navy outfit with different motifs and a similar scarf silhouette.",
+      "hypotheses_not_proven": [],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "openclip",
+      "query": {
+        "image_id": "ACA231003/image_1.jpg",
+        "image_path": "Khaadi_Data/images/ACA231003/image_1.jpg",
+        "product_id": "ACA231003"
+      },
+      "top_images": [
+        {
+          "image_id": "BK231002/image_5.jpg",
+          "image_path": "Khaadi_Data/images/BK231002/image_5.jpg",
+          "product_id": "BK231002",
+          "score": 0.9089266657829285
+        },
+        {
+          "image_id": "LLA230913/image_4.jpg",
+          "image_path": "Khaadi_Data/images/LLA230913/image_4.jpg",
+          "product_id": "LLA230913",
+          "score": 0.9048464894294739
+        },
+        {
+          "image_id": "MCA231003/image_4.jpg",
+          "image_path": "Khaadi_Data/images/MCA231003/image_4.jpg",
+          "product_id": "MCA231003",
+          "score": 0.9028245210647583
+        },
+        {
+          "image_id": "ALK231015/image_5.jpg",
+          "image_path": "Khaadi_Data/images/ALK231015/image_5.jpg",
+          "product_id": "ALK231015",
+          "score": 0.8774552941322327
+        },
+        {
+          "image_id": "ALA230828/image_4.jpg",
+          "image_path": "Khaadi_Data/images/ALA230828/image_4.jpg",
+          "product_id": "ALA230828",
+          "score": 0.8768801093101501
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "BK231002/image_5.jpg",
+          "matched_image_path": "Khaadi_Data/images/BK231002/image_5.jpg",
+          "product_id": "BK231002",
+          "score": 0.9089266657829285
+        },
+        {
+          "matched_image_id": "LLA230913/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/LLA230913/image_4.jpg",
+          "product_id": "LLA230913",
+          "score": 0.9048464894294739
+        },
+        {
+          "matched_image_id": "MCA231003/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/MCA231003/image_4.jpg",
+          "product_id": "MCA231003",
+          "score": 0.9028245210647583
+        },
+        {
+          "matched_image_id": "ALK231015/image_5.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALK231015/image_5.jpg",
+          "product_id": "ALK231015",
+          "score": 0.8774552941322327
+        },
+        {
+          "matched_image_id": "ALA230828/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALA230828/image_4.jpg",
+          "product_id": "ALA230828",
+          "score": 0.8768801093101501
+        }
+      ],
+      "observed_categories": [
+        "same color but wrong design",
+        "visually similar pattern"
+      ],
+      "observation": "Both are dark long tops with repeated small motifs in a rear three-quarter pose; motif colors, cuff/hem details and scarf print differ.",
+      "hypotheses_not_proven": [],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "openclip",
+      "query": {
+        "image_id": "ACA231008/image_0.jpg",
+        "image_path": "Khaadi_Data/images/ACA231008/image_0.jpg",
+        "product_id": "ACA231008"
+      },
+      "top_images": [
+        {
+          "image_id": "EET235134/image_3.jpg",
+          "image_path": "Khaadi_Data/images/EET235134/image_3.jpg",
+          "product_id": "EET235134",
+          "score": 0.7801042199134827
+        },
+        {
+          "image_id": "MLA230703/image_1.jpg",
+          "image_path": "Khaadi_Data/images/MLA230703/image_1.jpg",
+          "product_id": "MLA230703",
+          "score": 0.7600082755088806
+        },
+        {
+          "image_id": "EET23201/image_2.jpg",
+          "image_path": "Khaadi_Data/images/EET23201/image_2.jpg",
+          "product_id": "EET23201",
+          "score": 0.7503432035446167
+        },
+        {
+          "image_id": "WCWD23214/image_2.jpg",
+          "image_path": "Khaadi_Data/images/WCWD23214/image_2.jpg",
+          "product_id": "WCWD23214",
+          "score": 0.7450820803642273
+        },
+        {
+          "image_id": "ALK231015/image_1.jpg",
+          "image_path": "Khaadi_Data/images/ALK231015/image_1.jpg",
+          "product_id": "ALK231015",
+          "score": 0.7417632937431335
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "EET235134/image_3.jpg",
+          "matched_image_path": "Khaadi_Data/images/EET235134/image_3.jpg",
+          "product_id": "EET235134",
+          "score": 0.7801042199134827
+        },
+        {
+          "matched_image_id": "MLA230703/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/MLA230703/image_1.jpg",
+          "product_id": "MLA230703",
+          "score": 0.7600082755088806
+        },
+        {
+          "matched_image_id": "EET23201/image_2.jpg",
+          "matched_image_path": "Khaadi_Data/images/EET23201/image_2.jpg",
+          "product_id": "EET23201",
+          "score": 0.7503432035446167
+        },
+        {
+          "matched_image_id": "WCWD23214/image_2.jpg",
+          "matched_image_path": "Khaadi_Data/images/WCWD23214/image_2.jpg",
+          "product_id": "WCWD23214",
+          "score": 0.7450820803642273
+        },
+        {
+          "matched_image_id": "ALK231015/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALK231015/image_1.jpg",
+          "product_id": "ALK231015",
+          "score": 0.7417632937431335
+        }
+      ],
+      "observed_categories": [
+        "same garment type but different product"
+      ],
+      "observation": "Both images are close portraits with prominent face/upper-body composition. Query has a light fabric with dark tree motifs; the retrieved product has large bright flowers on a dark fabric.",
+      "hypotheses_not_proven": [
+        "model/person dominance: plausible composition bias; not established without an ablation"
+      ],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "openclip",
+      "query": {
+        "image_id": "AJ230603/image_0.jpg",
+        "image_path": "Khaadi_Data/images/AJ230603/image_0.jpg",
+        "product_id": "AJ230603"
+      },
+      "top_images": [
+        {
+          "image_id": "ALA230801/image_0.jpg",
+          "image_path": "Khaadi_Data/images/ALA230801/image_0.jpg",
+          "product_id": "ALA230801",
+          "score": 0.8485574126243591
+        },
+        {
+          "image_id": "EST23420/image_4.jpg",
+          "image_path": "Khaadi_Data/images/EST23420/image_4.jpg",
+          "product_id": "EST23420",
+          "score": 0.8176366090774536
+        },
+        {
+          "image_id": "EET23346T/image_0.jpg",
+          "image_path": "Khaadi_Data/images/EET23346T/image_0.jpg",
+          "product_id": "EET23346T",
+          "score": 0.7878614664077759
+        },
+        {
+          "image_id": "AJ230604/image_0.jpg",
+          "image_path": "Khaadi_Data/images/AJ230604/image_0.jpg",
+          "product_id": "AJ230604",
+          "score": 0.78657466173172
+        },
+        {
+          "image_id": "AJ230602/image_1.jpg",
+          "image_path": "Khaadi_Data/images/AJ230602/image_1.jpg",
+          "product_id": "AJ230602",
+          "score": 0.7758456468582153
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "ALA230801/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALA230801/image_0.jpg",
+          "product_id": "ALA230801",
+          "score": 0.8485574126243591
+        },
+        {
+          "matched_image_id": "EST23420/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/EST23420/image_4.jpg",
+          "product_id": "EST23420",
+          "score": 0.8176366090774536
+        },
+        {
+          "matched_image_id": "EET23346T/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/EET23346T/image_0.jpg",
+          "product_id": "EET23346T",
+          "score": 0.7878614664077759
+        },
+        {
+          "matched_image_id": "AJ230604/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/AJ230604/image_0.jpg",
+          "product_id": "AJ230604",
+          "score": 0.78657466173172
+        },
+        {
+          "matched_image_id": "AJ230602/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/AJ230602/image_1.jpg",
+          "product_id": "AJ230602",
+          "score": 0.7758456468582153
+        }
+      ],
+      "observed_categories": [
+        "same garment type but different product"
+      ],
+      "observation": "Both are close upper-body product views in warm yellow/orange tones. Query has a V/slit neckline and subtle tonal design; the returned top has a rounded neckline and conspicuous white floral print.",
+      "hypotheses_not_proven": [
+        "model/person dominance: face occupies much of both frames; causal influence untested"
+      ],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "openclip",
+      "query": {
+        "image_id": "AJ230604/image_2.jpg",
+        "image_path": "Khaadi_Data/images/AJ230604/image_2.jpg",
+        "product_id": "AJ230604"
+      },
+      "top_images": [
+        {
+          "image_id": "AJ230603/image_2.jpg",
+          "image_path": "Khaadi_Data/images/AJ230603/image_2.jpg",
+          "product_id": "AJ230603",
+          "score": 0.8281154632568359
+        },
+        {
+          "image_id": "ESS23416/image_1.jpg",
+          "image_path": "Khaadi_Data/images/ESS23416/image_1.jpg",
+          "product_id": "ESS23416",
+          "score": 0.8266943097114563
+        },
+        {
+          "image_id": "ESS23416/image_0.jpg",
+          "image_path": "Khaadi_Data/images/ESS23416/image_0.jpg",
+          "product_id": "ESS23416",
+          "score": 0.8075690865516663
+        },
+        {
+          "image_id": "ESS23412/image_4.jpg",
+          "image_path": "Khaadi_Data/images/ESS23412/image_4.jpg",
+          "product_id": "ESS23412",
+          "score": 0.8062094449996948
+        },
+        {
+          "image_id": "ALA230827/image_0.jpg",
+          "image_path": "Khaadi_Data/images/ALA230827/image_0.jpg",
+          "product_id": "ALA230827",
+          "score": 0.8060964941978455
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "AJ230603/image_2.jpg",
+          "matched_image_path": "Khaadi_Data/images/AJ230603/image_2.jpg",
+          "product_id": "AJ230603",
+          "score": 0.8281154632568359
+        },
+        {
+          "matched_image_id": "ESS23416/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/ESS23416/image_1.jpg",
+          "product_id": "ESS23416",
+          "score": 0.8266943097114563
+        },
+        {
+          "matched_image_id": "ESS23412/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/ESS23412/image_4.jpg",
+          "product_id": "ESS23412",
+          "score": 0.8062094449996948
+        },
+        {
+          "matched_image_id": "ALA230827/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALA230827/image_0.jpg",
+          "product_id": "ALA230827",
+          "score": 0.8060964941978455
+        },
+        {
+          "matched_image_id": "AK231006/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/AK231006/image_0.jpg",
+          "product_id": "AK231006",
+          "score": 0.806079626083374
+        }
+      ],
+      "observed_categories": [
+        "same garment type but different product"
+      ],
+      "observation": "Both show a long outfit with a scarf extended to the left on a plain background. The query is red with a grid-like top pattern; the returned product is orange/yellow with striped scarf details.",
+      "hypotheses_not_proven": [],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "fashionclip",
+      "query": {
+        "image_id": "ACA231001/image_1.jpg",
+        "image_path": "Khaadi_Data/images/ACA231001/image_1.jpg",
+        "product_id": "ACA231001"
+      },
+      "top_images": [
+        {
+          "image_id": "BLK231001/image_1.jpg",
+          "image_path": "Khaadi_Data/images/BLK231001/image_1.jpg",
+          "product_id": "BLK231001",
+          "score": 0.8630138635635376
+        },
+        {
+          "image_id": "ACA231001/image_0.jpg",
+          "image_path": "Khaadi_Data/images/ACA231001/image_0.jpg",
+          "product_id": "ACA231001",
+          "score": 0.8606060743331909
+        },
+        {
+          "image_id": "ALA230827/image_2.jpg",
+          "image_path": "Khaadi_Data/images/ALA230827/image_2.jpg",
+          "product_id": "ALA230827",
+          "score": 0.8592949509620667
+        },
+        {
+          "image_id": "ALK231009/image_2.jpg",
+          "image_path": "Khaadi_Data/images/ALK231009/image_2.jpg",
+          "product_id": "ALK231009",
+          "score": 0.8540025949478149
+        },
+        {
+          "image_id": "BCH231004/image_3.jpg",
+          "image_path": "Khaadi_Data/images/BCH231004/image_3.jpg",
+          "product_id": "BCH231004",
+          "score": 0.8514034748077393
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "BLK231001/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/BLK231001/image_1.jpg",
+          "product_id": "BLK231001",
+          "score": 0.8630138635635376
+        },
+        {
+          "matched_image_id": "ACA231001/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/ACA231001/image_0.jpg",
+          "product_id": "ACA231001",
+          "score": 0.8606060743331909
+        },
+        {
+          "matched_image_id": "ALA230827/image_2.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALA230827/image_2.jpg",
+          "product_id": "ALA230827",
+          "score": 0.8592949509620667
+        },
+        {
+          "matched_image_id": "ALK231009/image_2.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALK231009/image_2.jpg",
+          "product_id": "ALK231009",
+          "score": 0.8540025949478149
+        },
+        {
+          "matched_image_id": "BCH231004/image_3.jpg",
+          "matched_image_path": "Khaadi_Data/images/BCH231004/image_3.jpg",
+          "product_id": "BCH231004",
+          "score": 0.8514034748077393
+        }
+      ],
+      "observed_categories": [
+        "same color but wrong design",
+        "visually similar pattern"
+      ],
+      "observation": "Both show navy/white long floral tops from the rear. Query has yellow edge details and a large translucent scarf; top-1 has different floral placement, an opaque-looking patterned scarf and no matching yellow trim.",
+      "hypotheses_not_proven": [],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "fashionclip",
+      "query": {
+        "image_id": "ACA231003/image_1.jpg",
+        "image_path": "Khaadi_Data/images/ACA231003/image_1.jpg",
+        "product_id": "ACA231003"
+      },
+      "top_images": [
+        {
+          "image_id": "LLA230913/image_4.jpg",
+          "image_path": "Khaadi_Data/images/LLA230913/image_4.jpg",
+          "product_id": "LLA230913",
+          "score": 0.9139899015426636
+        },
+        {
+          "image_id": "MLA230703/image_5.jpg",
+          "image_path": "Khaadi_Data/images/MLA230703/image_5.jpg",
+          "product_id": "MLA230703",
+          "score": 0.9071364402770996
+        },
+        {
+          "image_id": "MCA231003/image_4.jpg",
+          "image_path": "Khaadi_Data/images/MCA231003/image_4.jpg",
+          "product_id": "MCA231003",
+          "score": 0.9056435823440552
+        },
+        {
+          "image_id": "BK231002/image_5.jpg",
+          "image_path": "Khaadi_Data/images/BK231002/image_5.jpg",
+          "product_id": "BK231002",
+          "score": 0.8981219530105591
+        },
+        {
+          "image_id": "ALA230828/image_4.jpg",
+          "image_path": "Khaadi_Data/images/ALA230828/image_4.jpg",
+          "product_id": "ALA230828",
+          "score": 0.8947601318359375
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "LLA230913/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/LLA230913/image_4.jpg",
+          "product_id": "LLA230913",
+          "score": 0.9139899015426636
+        },
+        {
+          "matched_image_id": "MLA230703/image_5.jpg",
+          "matched_image_path": "Khaadi_Data/images/MLA230703/image_5.jpg",
+          "product_id": "MLA230703",
+          "score": 0.9071364402770996
+        },
+        {
+          "matched_image_id": "MCA231003/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/MCA231003/image_4.jpg",
+          "product_id": "MCA231003",
+          "score": 0.9056435823440552
+        },
+        {
+          "matched_image_id": "BK231002/image_5.jpg",
+          "matched_image_path": "Khaadi_Data/images/BK231002/image_5.jpg",
+          "product_id": "BK231002",
+          "score": 0.8981219530105591
+        },
+        {
+          "matched_image_id": "ALA230828/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALA230828/image_4.jpg",
+          "product_id": "ALA230828",
+          "score": 0.8947601318359375
+        }
+      ],
+      "observed_categories": [
+        "same color but wrong design",
+        "same garment type but different product"
+      ],
+      "observation": "Both show a dark long top from behind with maroon/pink hem details. Query has small floral sprigs and dark trousers; top-1 has conspicuous white chevrons and light trousers.",
+      "hypotheses_not_proven": [],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "fashionclip",
+      "query": {
+        "image_id": "ACA231006/image_0.jpg",
+        "image_path": "Khaadi_Data/images/ACA231006/image_0.jpg",
+        "product_id": "ACA231006"
+      },
+      "top_images": [
+        {
+          "image_id": "ALK231017/image_3.jpg",
+          "image_path": "Khaadi_Data/images/ALK231017/image_3.jpg",
+          "product_id": "ALK231017",
+          "score": 0.8772588968276978
+        },
+        {
+          "image_id": "ACA231001/image_0.jpg",
+          "image_path": "Khaadi_Data/images/ACA231001/image_0.jpg",
+          "product_id": "ACA231001",
+          "score": 0.8760665059089661
+        },
+        {
+          "image_id": "ALK231009/image_3.jpg",
+          "image_path": "Khaadi_Data/images/ALK231009/image_3.jpg",
+          "product_id": "ALK231009",
+          "score": 0.8756798505783081
+        },
+        {
+          "image_id": "BLK231001/image_1.jpg",
+          "image_path": "Khaadi_Data/images/BLK231001/image_1.jpg",
+          "product_id": "BLK231001",
+          "score": 0.8745817542076111
+        },
+        {
+          "image_id": "ACA231006/image_1.jpg",
+          "image_path": "Khaadi_Data/images/ACA231006/image_1.jpg",
+          "product_id": "ACA231006",
+          "score": 0.8735747337341309
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "ALK231017/image_3.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALK231017/image_3.jpg",
+          "product_id": "ALK231017",
+          "score": 0.8772588968276978
+        },
+        {
+          "matched_image_id": "ACA231001/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/ACA231001/image_0.jpg",
+          "product_id": "ACA231001",
+          "score": 0.8760665059089661
+        },
+        {
+          "matched_image_id": "ALK231009/image_3.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALK231009/image_3.jpg",
+          "product_id": "ALK231009",
+          "score": 0.8756798505783081
+        },
+        {
+          "matched_image_id": "BLK231001/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/BLK231001/image_1.jpg",
+          "product_id": "BLK231001",
+          "score": 0.8745817542076111
+        },
+        {
+          "matched_image_id": "ACA231006/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/ACA231006/image_1.jpg",
+          "product_id": "ACA231006",
+          "score": 0.8735747337341309
+        }
+      ],
+      "observed_categories": [
+        "same garment type but different product"
+      ],
+      "observation": "Both are full-length front outfit views with a long scarf and hands near the waist. Query is light grey/blue with dragonfly motifs; top-1 is royal blue with vertical stripe-like ornament.",
+      "hypotheses_not_proven": [],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "fashionclip",
+      "query": {
+        "image_id": "ACA231008/image_0.jpg",
+        "image_path": "Khaadi_Data/images/ACA231008/image_0.jpg",
+        "product_id": "ACA231008"
+      },
+      "top_images": [
+        {
+          "image_id": "EET235134/image_3.jpg",
+          "image_path": "Khaadi_Data/images/EET235134/image_3.jpg",
+          "product_id": "EET235134",
+          "score": 0.7869735956192017
+        },
+        {
+          "image_id": "MLA230703/image_1.jpg",
+          "image_path": "Khaadi_Data/images/MLA230703/image_1.jpg",
+          "product_id": "MLA230703",
+          "score": 0.7778257131576538
+        },
+        {
+          "image_id": "EET235130/image_4.jpg",
+          "image_path": "Khaadi_Data/images/EET235130/image_4.jpg",
+          "product_id": "EET235130",
+          "score": 0.770439624786377
+        },
+        {
+          "image_id": "MCA231001/image_0.jpg",
+          "image_path": "Khaadi_Data/images/MCA231001/image_0.jpg",
+          "product_id": "MCA231001",
+          "score": 0.7684379816055298
+        },
+        {
+          "image_id": "ILA230701/image_2.jpg",
+          "image_path": "Khaadi_Data/images/ILA230701/image_2.jpg",
+          "product_id": "ILA230701",
+          "score": 0.7673022747039795
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "EET235134/image_3.jpg",
+          "matched_image_path": "Khaadi_Data/images/EET235134/image_3.jpg",
+          "product_id": "EET235134",
+          "score": 0.7869735956192017
+        },
+        {
+          "matched_image_id": "MLA230703/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/MLA230703/image_1.jpg",
+          "product_id": "MLA230703",
+          "score": 0.7778257131576538
+        },
+        {
+          "matched_image_id": "EET235130/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/EET235130/image_4.jpg",
+          "product_id": "EET235130",
+          "score": 0.770439624786377
+        },
+        {
+          "matched_image_id": "MCA231001/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/MCA231001/image_0.jpg",
+          "product_id": "MCA231001",
+          "score": 0.7684379816055298
+        },
+        {
+          "matched_image_id": "ILA230701/image_2.jpg",
+          "matched_image_path": "Khaadi_Data/images/ILA230701/image_2.jpg",
+          "product_id": "ILA230701",
+          "score": 0.7673022747039795
+        }
+      ],
+      "observed_categories": [
+        "same garment type but different product"
+      ],
+      "observation": "Both images are close portraits with prominent face/upper-body composition. Query has a light fabric with dark tree motifs; the retrieved product has large bright flowers on a dark fabric.",
+      "hypotheses_not_proven": [
+        "model/person dominance: plausible composition bias; not established without an ablation"
+      ],
+      "review_status": "visually-reviewed"
+    },
+    {
+      "model": "fashionclip",
+      "query": {
+        "image_id": "AJ230603/image_0.jpg",
+        "image_path": "Khaadi_Data/images/AJ230603/image_0.jpg",
+        "product_id": "AJ230603"
+      },
+      "top_images": [
+        {
+          "image_id": "ALA230801/image_0.jpg",
+          "image_path": "Khaadi_Data/images/ALA230801/image_0.jpg",
+          "product_id": "ALA230801",
+          "score": 0.8777626752853394
+        },
+        {
+          "image_id": "AJ230604/image_0.jpg",
+          "image_path": "Khaadi_Data/images/AJ230604/image_0.jpg",
+          "product_id": "AJ230604",
+          "score": 0.8282153010368347
+        },
+        {
+          "image_id": "EET23215/image_4.jpg",
+          "image_path": "Khaadi_Data/images/EET23215/image_4.jpg",
+          "product_id": "EET23215",
+          "score": 0.814624547958374
+        },
+        {
+          "image_id": "EET23215/image_1.jpg",
+          "image_path": "Khaadi_Data/images/EET23215/image_1.jpg",
+          "product_id": "EET23215",
+          "score": 0.81358402967453
+        },
+        {
+          "image_id": "BDS230602/image_1.jpg",
+          "image_path": "Khaadi_Data/images/BDS230602/image_1.jpg",
+          "product_id": "BDS230602",
+          "score": 0.8097161054611206
+        }
+      ],
+      "top_products": [
+        {
+          "matched_image_id": "ALA230801/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/ALA230801/image_0.jpg",
+          "product_id": "ALA230801",
+          "score": 0.8777626752853394
+        },
+        {
+          "matched_image_id": "AJ230604/image_0.jpg",
+          "matched_image_path": "Khaadi_Data/images/AJ230604/image_0.jpg",
+          "product_id": "AJ230604",
+          "score": 0.8282153010368347
+        },
+        {
+          "matched_image_id": "EET23215/image_4.jpg",
+          "matched_image_path": "Khaadi_Data/images/EET23215/image_4.jpg",
+          "product_id": "EET23215",
+          "score": 0.814624547958374
+        },
+        {
+          "matched_image_id": "BDS230602/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/BDS230602/image_1.jpg",
+          "product_id": "BDS230602",
+          "score": 0.8097161054611206
+        },
+        {
+          "matched_image_id": "EET23203T/image_1.jpg",
+          "matched_image_path": "Khaadi_Data/images/EET23203T/image_1.jpg",
+          "product_id": "EET23203T",
+          "score": 0.806373655796051
+        }
+      ],
+      "observed_categories": [
+        "same garment type but different product"
+      ],
+      "observation": "Both are close upper-body product views in warm yellow/orange tones. Query has a V/slit neckline and subtle tonal design; the returned top has a rounded neckline and conspicuous white floral print.",
+      "hypotheses_not_proven": [
+        "model/person dominance: face occupies much of both frames; causal influence untested"
+      ],
+      "review_status": "visually-reviewed"
+    }
+  ],
+  "paired_p1_outcomes": {
+    "both_correct": 271,
+    "openclip_only_correct": 14,
+    "fashionclip_only_correct": 17,
+    "both_incorrect": 97
+  }
+}

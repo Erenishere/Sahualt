@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="480" viewBox="0 0 400 480" role="img" aria-label="Midnight Textured Kurta">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2422"/>
+      <stop offset="100%" stop-color="#0d1210"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="480" fill="url(#bg)"/>
+  <path d="M120 90 L200 60 L280 90 L260 400 L140 400 Z" fill="#252f2c" stroke="#3a4541" stroke-width="2"/>
+  <ellipse cx="200" cy="95" rx="48" ry="18" fill="#1a2220"/>
+  <text x="200" y="440" fill="#8fa19a" font-family="Georgia, serif" font-size="22" text-anchor="middle">Midnight Kurta</text>
+</svg>

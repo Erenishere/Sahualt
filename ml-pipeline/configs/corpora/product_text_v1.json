@@ -1,0 +1,24 @@
+{
+  "registry_version": "frozen-product-text-corpus-v1",
+  "corpus_id": "PRODUCT-TEXT-V1",
+  "status": "FROZEN",
+  "schema_version": "product-text-v1",
+  "source": "Canonical PostgreSQL Product/Variant projection",
+  "record_count": 400,
+  "artifact_sha256": "5067202e69fbe0dfd61601e23cfe037a88fcc39a533c923dbdab270e0208e43f",
+  "artifact_path": "artifacts/corpora/product-text-v1/5067202e69fbe0dfd61601e23cfe037a88fcc39a533c923dbdab270e0208e43f/product-text-v1.jsonl",
+  "manifest_sha256": "0b6506f645fc773a3e7405a6075fed8e71f11815d4b22eb3c5d9da761ec35e50",
+  "manifest_path": "artifacts/corpora/product-text-v1/5067202e69fbe0dfd61601e23cfe037a88fcc39a533c923dbdab270e0208e43f/product-text-v1.manifest.json",
+  "build_input": {
+    "artifact_path": "artifacts/product_documents/product-text-v1.jsonl",
+    "manifest_path": "artifacts/product_documents/product-text-v1.manifest.json"
+  },
+  "runtime": {"python": "3.12", "unicode": "15.0.0"},
+  "normalization_version": "product-normalization-v1",
+  "builder_version": "product-text-builder-v1",
+  "adr": "ADR-ML-004-v1",
+  "db_contract_version": "DB-CONTRACT-V1",
+  "source_migration": "20260910_001_catalog_core_v1",
+  "fixture_semantic_checksum": "0a686d197ec1bdac3ea49bfe0a8ee9487db95d6c6967d72c909d5cc490eab900",
+  "authority": "Derived frozen research corpus; PostgreSQL remains business-data truth"
+}

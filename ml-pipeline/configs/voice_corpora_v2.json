@@ -1,0 +1,102 @@
+{
+  "schema_version": "eval-voice-corpora-v2-registry-v1",
+  "protocol": {
+    "id": "EVAL-VOICE-CORPORA-V2",
+    "status": "PREREGISTERED_METADATA_ONLY",
+    "selection_seed": 20261012,
+    "frozen_v1_policy": "VERIFY_ONLY_DO_NOT_MODIFY",
+    "no_audio_download_before_source_gate": true,
+    "no_model_execution_before_dataset_freeze": true,
+    "no_training_or_tuning": true
+  },
+  "sources": {
+    "urduspeech": {
+      "source_type": "huggingface_dataset",
+      "repository": "ASLP-lab/UrduSpeech",
+      "revision": "16dd380cfd9049a3db7f06a98e878086916bf833",
+      "benchmark_root": "benchmark",
+      "declared_license": "cc-by-4.0",
+      "structured_hub_license": "MISSING",
+      "rights_review": "REQUIRED",
+      "evaluation_independence": "NOT_VERIFIED",
+      "acquisition_status": "BLOCKED",
+      "expected_inventory": {
+        "file_count": 4288,
+        "byte_count": 3561652930,
+        "audio_file_count": 4170,
+        "metadata_file_count": 118,
+        "metadata_byte_count": 6211778,
+        "inventory_sha256": "769f09f1139a6580c5872bba82839cec4584cfa212cf6c67585697cf9ad134d2"
+      },
+      "subsets": {
+        "standard_urdu": {
+          "path": "benchmark/US-benchmark-Std",
+          "language": "ur",
+          "sample_target": 200,
+          "required_for_gate": true,
+          "use_all_if_fewer": true,
+          "expected_file_count": 2221,
+          "expected_byte_count": 1397580773
+        },
+        "code_switched": {
+          "path": "benchmark/US-benchmark-CS",
+          "language": "ur-en",
+          "sample_target": 200,
+          "required_for_gate": true,
+          "use_all_if_fewer": true,
+          "expected_file_count": 1901,
+          "expected_byte_count": 2098847758
+        },
+        "pakistani_english": {
+          "path": "benchmark/US-benchmark-EngPk",
+          "language": "en-pk",
+          "sample_target": 200,
+          "required_for_gate": false,
+          "use_all_if_fewer": true,
+          "expected_file_count": 166,
+          "expected_byte_count": 65224399
+        }
+      }
+    },
+    "common_voice_27_sindhi": {
+      "source_type": "mozilla_data_collective",
+      "dataset_id": "cmu5wbmn400bco107vi2n2yhb",
+      "release": "cv-corpus-27.0-2026-09-11",
+      "declared_license": "cc0-1.0",
+      "status": "REFERENCE_ONLY",
+      "evaluation_independence": "NOT_VERIFIED",
+      "test_clips": 42,
+      "validated_clips": 328,
+      "unresolved_clips": 65569,
+      "speaker_count": 35,
+      "audio_download_status": "BLOCKED_TERMS_AND_OVERLAP_AUDIT"
+    },
+    "pashto_audio_visual": {
+      "source_type": "mozilla_data_collective",
+      "dataset_id": "cmuzrhfbd006l07nxoe3inrzq",
+      "declared_license": "cc0-1.0",
+      "status": "QUARANTINED_AUDIT_ONLY",
+      "record_count": 9421,
+      "speaker_count": 9,
+      "speaker_population": "educated_urban_afghanistan_age_20_35",
+      "transcript_listening_review": "OUTSTANDING",
+      "consent_and_redistribution_review": "OUTSTANDING",
+      "evaluation_independence": "NOT_VERIFIED"
+    },
+    "south_asian_english": {
+      "source_type": "unresolved_common_voice_subset",
+      "status": "SOURCE_ID_PENDING",
+      "claimed_test_clips": 3864,
+      "claimed_test_speakers": 81,
+      "counts_verified": false,
+      "audio_download_status": "BLOCKED_SOURCE_AUDIT"
+    },
+    "sindhi_holdout_v1": {
+      "source_type": "fresh_human_collection",
+      "status": "PENDING",
+      "required_recordings": 100,
+      "current_recordings": 0,
+      "model_evaluation": "NOT_RUN"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.main { width: min(1120px, 100%); margin: 0 auto; padding: 48px clamp(20px, 5vw, 64px) 80px; }
+.eyebrow { margin: 0; color: var(--orange-dark); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.main h1 { margin: 8px 0 10px; font: 500 clamp(34px, 5vw, 54px)/1.08 Georgia, serif; letter-spacing: -.035em; }
+.lead { margin: 0 0 32px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.metric, .tableWrap, .empty, .loading { border: 1px solid var(--line); border-radius: 16px; background: var(--card); box-shadow: 0 12px 35px rgba(18,33,29,.05); }
+.metric { padding: 23px; }
+.metric small { display: block; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.metric b { display: block; margin-top: 18px; font: 500 38px Georgia, serif; }
+.tableWrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; min-width: 620px; text-align: left; }
+.table th { padding: 15px 20px; border-bottom: 1px solid var(--line); background: #f8f5ee; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.table td { padding: 17px 20px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.table tbody tr:last-child td { border-bottom: 0; }
+.table a { color: var(--orange-dark); font-weight: 700; text-underline-offset: 3px; }
+.table button { padding: 9px 13px; border: 1px solid var(--line); border-radius: 8px; background: #faf8f3; font-size: 12px; font-weight: 800; }
+.table button:hover { border-color: var(--orange); }
+.table button:disabled { cursor: wait; opacity: .55; }
+.empty, .loading { padding: 26px; color: var(--muted); line-height: 1.6; }
+.error { margin: 0 0 20px; padding: 14px 16px; border: 1px solid #e8bab1; border-radius: 10px; background: #fff4f0; color: #9a3927; font-size: 13px; }
+.main :is(a, button):focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+@media (max-width: 780px) { .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

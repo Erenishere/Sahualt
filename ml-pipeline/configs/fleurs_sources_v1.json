@@ -1,0 +1,21 @@
+{
+  "schema_version": "fleurs-source-lock-v1",
+  "repository": "google/fleurs",
+  "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+  "license": "cc-by-4.0",
+  "card": {"path": "README.md", "sha256": "688f79f2a5c731af3796e9f683eb02f9b3f09d040decd8c5625d0f37098e71c6", "size": 385614},
+  "languages": {
+    "en": {"config": "en_us", "rows": 647,
+      "metadata": {"path": "data/en_us/test.tsv", "sha256": "74c046239374deeb60fa63f258f907388093a32bcaa3140965f70ef05c79f7ca", "size": 367864},
+      "archive": {"path": "data/en_us/audio/test.tar.gz", "sha256": "d9c2e37b41aacd41bc283554a0a82b5476b36887049774ecb2819dcaaa55a356", "size": 289851356}},
+    "ur": {"config": "ur_pk", "rows": 299,
+      "metadata": {"path": "data/ur_pk/test.tsv", "sha256": "39cd4fd14ddcf730a9f2ddfd590181255555ba060a53506dcff598a8b9ecc476", "size": 261554},
+      "archive": {"path": "data/ur_pk/audio/test.tar.gz", "sha256": "618840ad5fb21a59cc179ec535ddbc8e756e2fb40624689c6d59c93e019cd745", "size": 149549883}},
+    "sd": {"config": "sd_in", "rows": 980,
+      "metadata": {"path": "data/sd_in/test.tsv", "sha256": "91932e9e899f568f80bdda4dc4c37353194aad828933088e239ae064b03ba677", "size": 772521},
+      "archive": {"path": "data/sd_in/audio/test.tar.gz", "sha256": "94f572b97e73c8176f39de3922a4022f729f50d285a493aea630ccfc664487ed", "size": 621842598}},
+    "ps": {"config": "ps_af", "rows": 512,
+      "metadata": {"path": "data/ps_af/test.tsv", "sha256": "ee800117094cdac587e1dc3ce6e746d27ac6883287608a8f45e321d2e5ae529b", "size": 404590},
+      "archive": {"path": "data/ps_af/audio/test.tar.gz", "sha256": "153dc026a7790539d71aeead7933d0f092b318ade0f327cd4355b8de5473795e", "size": 303903990}}
+  }
+}

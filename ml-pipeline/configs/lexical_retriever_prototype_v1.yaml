@@ -1,0 +1,11 @@
+version: lexical-retriever-prototype-v1
+status: DRAFT_NOT_OFFICIAL_BENCHMARK
+adr: ADR-ML-002-draft
+migration_id: 20260926_002_search_lexical_v1
+text_search_config: english
+query_parser: websearch_to_tsquery
+rank_function: ts_rank_cd
+document_schema_version: product-text-v1
+retriever_id: postgresql-fts-lexical-prototype-v1
+eval_text_v1_execution: blocked_until_label_freeze
+notes: Use synthetic catalogues and developer queries only until human labels freeze.

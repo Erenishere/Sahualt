@@ -1,0 +1,10 @@
+version: hybrid-retriever-prototype-v1
+status: DRAFT_NOT_OFFICIAL_BENCHMARK
+retriever_id: hybrid-rrf-text-prototype-v1
+rrf_k: 60
+lexical_branch_source: lexical
+dense_branch_source: dense
+branch_depth: 50
+document_schema_version: product-text-v1
+eval_text_v1_execution: blocked_until_label_freeze
+notes: Combines PostgresLexicalRetriever and PostgresDenseRetriever ranks only; no SQL here.

@@ -1,0 +1,30 @@
+{
+  "registry_version": "engineering-text-prototype-freeze-v1",
+  "registry_id": "ENGINEERING-TEXT-PROTOTYPE-V1",
+  "frozen_at": "2026-09-26",
+  "scope": "prototype-implementation-proof-not-official-benchmark",
+  "lexical_prototype": "PASS",
+  "dense_prototype": "PASS",
+  "hybrid_prototype": "PASS",
+  "unit_tests_scope": "lexical,dense,hybrid,rank_fusion",
+  "toy_db_smoke": "OPERATOR_RUN_REQUIRED",
+  "official_eval_text_v1": "BLOCKED",
+  "blocked_reason": "HUMAN_LABEL_FREEZE_PENDING",
+  "prototype_config_files_frozen": [
+    "configs/lexical_retriever_prototype_v1.yaml",
+    "configs/dense_retriever_prototype_v1.yaml",
+    "configs/hybrid_retriever_prototype_v1.yaml"
+  ],
+  "adr_status": {
+    "ADR-ML-002": "DRAFT_PROTOTYPE",
+    "ADR-ML-003": "DRAFT_PROTOTYPE"
+  },
+  "explicitly_not_claimed": [
+    "production_encoder_selection",
+    "rrf_k_as_winner_setting",
+    "toy_cosine_as_accuracy_evidence",
+    "eval_text_v1_ndcg_or_ranking_metrics"
+  ],
+  "next_human_milestone": "40_genuine_queries_then_freeze_queries",
+  "next_engineering_milestone_after_unlock": "official_eval_harness_baselines_a_b_d"
+}

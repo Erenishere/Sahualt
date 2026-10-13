@@ -1,0 +1,36 @@
+{
+  "model": "openclip",
+  "embedding_version": "openclip-vit-b32-1a25a446712b-af731563a693-v1",
+  "results": [
+    {
+      "product_id": "ACA231001",
+      "score": 1.0,
+      "matched_image_id": "ACA231001/image_0.jpg",
+      "matched_image_path": "Khaadi_Data/images/ACA231001/image_0.jpg"
+    },
+    {
+      "product_id": "LLA230807",
+      "score": 0.8773189187049866,
+      "matched_image_id": "LLA230807/image_3.jpg",
+      "matched_image_path": "Khaadi_Data/images/LLA230807/image_3.jpg"
+    },
+    {
+      "product_id": "ALK231012",
+      "score": 0.8715336918830872,
+      "matched_image_id": "ALK231012/image_3.jpg",
+      "matched_image_path": "Khaadi_Data/images/ALK231012/image_3.jpg"
+    },
+    {
+      "product_id": "ILA230703",
+      "score": 0.869008481502533,
+      "matched_image_id": "ILA230703/image_2.jpg",
+      "matched_image_path": "Khaadi_Data/images/ILA230703/image_2.jpg"
+    },
+    {
+      "product_id": "BLK231001",
+      "score": 0.8688340783119202,
+      "matched_image_id": "BLK231001/image_0.jpg",
+      "matched_image_path": "Khaadi_Data/images/BLK231001/image_0.jpg"
+    }
+  ]
+}

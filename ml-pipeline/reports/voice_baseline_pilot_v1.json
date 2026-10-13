@@ -1,0 +1,26 @@
+{
+  "schema_version": "voice-baseline-pilot-results-v1",
+  "protocol_id": "VOICE-BASELINE-PILOT-V1",
+  "label": "PILOT",
+  "status": "WAITING_FOR_RECORDINGS",
+  "source_id": "SAHULAT-FIRST-PARTY-VOICE-PILOT-V1",
+  "audio_downloaded": false,
+  "model_execution": "NOT_RUN",
+  "fine_tuning": "NOT_RUN",
+  "v1_replacement": false,
+  "production_promotion": false,
+  "counts": {
+    "ur": {"recordings": 0, "speakers": 0, "target_recordings": 30, "ideal_native_speakers": 5},
+    "ur_en": {"recordings": 0, "speakers": 0, "target_recordings": 30, "ideal_native_speakers": 5},
+    "sd": {"recordings": 0, "speakers": 0, "target_recordings": 30, "ideal_native_speakers": 5},
+    "ps": {"recordings": 0, "speakers": 0, "target_recordings": 30, "ideal_native_speakers": 5}
+  },
+  "metrics": null,
+  "strongest_model_by_language": null,
+  "remaining_blockers": [
+    "No first-party consented audio or human-verified reference transcripts are present.",
+    "Participant consent form wording must receive required human/institutional review before collection.",
+    "Whisper large-v3-turbo is not cached in this checkout; inference is offline-only and requires the pinned model snapshot to be provisioned separately.",
+    "Model output is not an intent classifier; only annotated intent-cue preservation can be scored in this ASR-only pilot."
+  ]
+}

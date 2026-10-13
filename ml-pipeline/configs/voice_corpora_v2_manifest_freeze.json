@@ -1,0 +1,51 @@
+{
+  "schema_version": "eval-voice-corpora-v2-manifest-freeze-v1",
+  "protocol": {
+    "id": "EVAL-VOICE-CORPORA-V2-MANIFEST-FREEZE",
+    "parent_protocol_id": "EVAL-VOICE-CORPORA-V2",
+    "protocol_revision": 4,
+    "status": "PREREGISTERED_METADATA_ONLY",
+    "amendment": {
+      "id": "LARGE-LEDGER-CANONICAL-READER-1",
+      "supersedes_gate_path": "configs/gates/eval_voice_corpora_v2_manifest_freeze_protocol_r3.json",
+      "supersedes_gate_sha256": "ba8fa69f5504b3effba5a7e651d62b7f14c5b18407fdb836d7255588ddf232d9",
+      "reason": "Decision ledgers exceed the shared JSON reader's 2 MiB limit. Added a bounded canonical reader for frozen artifacts; the already-written R3 manifests and all source decisions remain unchanged.",
+      "selection_policy_changed": false,
+      "readiness_rules_changed": false
+    },
+    "seed": 20261012,
+    "max_duration_seconds": 30,
+    "audio_download": false,
+    "model_execution": false,
+    "training_or_tuning": false,
+    "transcript_policy": "EXCLUDE_UNTIL_HUMAN_ADJUDICATED",
+    "speaker_identity_policy": "PUBLISHED_LABELS_ARE_NOT_VERIFIED_IDENTITIES"
+  },
+  "anchors": {
+    "base_protocol_gate_sha256": "e2e5c75293d2da0ad5a6b3b156afafd223ece61f334c89f1addccd810a6343b8",
+    "base_audit_gate_sha256": "e4edea03276fad080e42e87c965f2c1c5149f875772906de15f0138dbf7a17f4",
+    "base_audit_sha256": "128e619150698c58f98d80c62c5d8bf56cf4242102645d6bc4b99806d81fc479",
+    "readiness_protocol_gate_sha256": "468746b85156f978473fec2129470275c0dfafab1f7163c781a3729894b3307f",
+    "readiness_gate_sha256": "2f61b59532ce5703b0b02af9466a9533db3aa1b79629c29ab0633e3753b25d15",
+    "readiness_report_sha256": "1b9cc82fd3eae0ab4415169559787aa97c9bd62ac9e806112810fb9da0f35f73"
+  },
+  "source": {
+    "key": "urduspeech",
+    "repository": "ASLP-lab/UrduSpeech",
+    "revision": "16dd380cfd9049a3db7f06a98e878086916bf833",
+    "metadata_filename": "clean_transcription.jsonl",
+    "subsets": {
+      "standard_urdu": {"language": "ur", "sample_target": 200, "required": true},
+      "code_switched": {"language": "ur-en", "sample_target": 200, "required": true},
+      "pakistani_english": {"language": "en-pk", "sample_target": 200, "required": false}
+    }
+  },
+  "outputs": {
+    "directory": "artifacts/eval_voice_corpora_v2_manifest_freeze",
+    "selection_report_json": "reports/eval_voice_corpora_v2_selection_exclusions.json",
+    "selection_report_markdown": "reports/eval_voice_corpora_v2_selection_exclusions.md",
+    "registry": "configs/corpora/eval_voice_corpora_v2_manifest_freeze.json",
+    "protocol_gate": "configs/gates/eval_voice_corpora_v2_manifest_freeze_protocol_r4.json",
+    "gate": "configs/gates/eval_voice_corpora_v2_manifest_freeze.json"
+  }
+}

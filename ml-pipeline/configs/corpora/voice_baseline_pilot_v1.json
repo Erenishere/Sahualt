@@ -1,0 +1,24 @@
+{
+  "schema_version": "voice-baseline-pilot-source-v1",
+  "source_id": "SAHULAT-FIRST-PARTY-VOICE-PILOT-V1",
+  "source_type": "first_party_human_recordings",
+  "recording_policy": {
+    "recording_source": "fresh_human_recording",
+    "third_party_audio_allowed": false,
+    "tts_or_synthetic_audio_allowed": false,
+    "model_generated_audio_allowed": false,
+    "required_consents": [
+      "private_audio_storage",
+      "local_asr_processing",
+      "aggregate_research_reporting"
+    ],
+    "public_audio_release": false,
+    "audio_format": "mono-16000Hz-PCM16-RIFF-WAV",
+    "maximum_duration_seconds": 30
+  },
+  "private_workspace": ".local/voice_baseline_pilot_v1",
+  "consent_registry": "consent_registry.json",
+  "recording_input": "recordings_input.json",
+  "consent_evidence_directory": "consent-evidence",
+  "audio_directory": "audio"
+}

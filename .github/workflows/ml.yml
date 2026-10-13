@@ -1,0 +1,28 @@
+name: ML pipeline checks
+on:
+  push:
+    paths:
+      - "ml-pipeline/**"
+      - ".github/workflows/ml.yml"
+  pull_request:
+    paths:
+      - "ml-pipeline/**"
+      - ".github/workflows/ml.yml"
+defaults:
+  run:
+    working-directory: ml-pipeline
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ml-pipeline/pyproject.toml
+      - run: python -m pip install -e ".[dev,api,api-test]"
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: mypy
+      - run: pytest -m "not model and not slow and not database"

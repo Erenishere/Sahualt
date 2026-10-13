@@ -1,0 +1,28 @@
+{
+  "schema_version": "voice-baseline-pilot-consents-v1",
+  "source_id": "SAHULAT-FIRST-PARTY-VOICE-PILOT-V1",
+  "consents": [
+    {
+      "speaker_id": "SPK_001",
+      "status": "active",
+      "signed_at": "YYYY-MM-DD",
+      "retention_until": "YYYY-MM-DD",
+      "adult_participant_confirmed": true,
+      "form_version": "VOICE-BASELINE-PILOT-CONSENT-V1",
+      "allowed_groups": ["ur"],
+      "native_language_groups": ["ur"],
+      "permissions": {
+        "private_audio_storage": true,
+        "local_asr_processing": true,
+        "aggregate_research_reporting": true,
+        "deidentified_transcript_examples": false,
+        "public_audio_release": false
+      },
+      "withdrawn": false,
+      "consent_evidence_path": "SPK_001.pdf",
+      "consent_evidence_sha256": "replace-with-64-lowercase-hex-characters",
+      "reviewer_id": "REVIEWER_001",
+      "reviewed_at": "YYYY-MM-DD"
+    }
+  ]
+}

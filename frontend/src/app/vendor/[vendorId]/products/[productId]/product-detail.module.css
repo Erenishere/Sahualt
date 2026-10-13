@@ -1,0 +1,49 @@
+.page { min-height: 100vh; background: var(--paper); color: var(--ink); }
+.panel { max-width: 1050px; margin: 0 auto; padding: 43px clamp(20px, 5vw, 64px) 80px; }
+.back { display: inline-block; margin-bottom: 32px; color: var(--orange-dark); font-size: 12px; font-weight: 800; text-decoration: none; }
+.back:hover { text-decoration: underline; }
+.eyebrow { margin: 0 0 8px; color: var(--orange-dark); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.panel h1 { margin: 0 0 12px; font-family: Georgia, serif; font-size: clamp(34px, 5vw, 52px); font-weight: 500; letter-spacing: -.035em; }
+.panel h2 { margin: 40px 0 15px; font-family: Georgia, serif; font-size: 26px; font-weight: 500; }
+.status { display: inline-flex; gap: 6px; margin: 0; padding: 9px 13px; border-radius: 999px; background: #e9e5dc; color: var(--ink); font-size: 12px; }
+.tableWrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.tableWrap table { width: 100%; border-collapse: collapse; text-align: left; }
+.tableWrap th { background: #f0ede5; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.tableWrap th, .tableWrap td { padding: 15px 17px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tableWrap tr:last-child td { border-bottom: 0; }
+.tableWrap td { font-size: 12px; }
+.tableWrap code { overflow-wrap: anywhere; font-size: 11px; }
+.note { margin-top: 21px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.error { max-width: 650px; padding: 19px 22px; border: 1px solid #e8bab1; border-radius: 12px; background: #fff4f0; color: #9a3927; font-size: 14px; }
+.error a { color: inherit; font-weight: 700; }
+.editForm { margin-top: 32px; padding: 25px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.editForm h2 { margin: 0 0 8px; }
+.editForm p { color: var(--muted); font-size: 13px; }
+.editForm > label { display: grid; gap: 7px; max-width: 420px; margin: 18px 0; font-size: 12px; font-weight: 700; }
+.editForm > label select { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--ink); font: inherit; }
+.formGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 22px 0; }
+.formGrid label { display: grid; gap: 7px; font-size: 12px; font-weight: 700; }
+.formGrid input, .formGrid select { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--ink); font: inherit; }
+.editForm button { padding: 11px 17px; border: 0; border-radius: 8px; background: var(--orange-dark); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+.editForm button:disabled { opacity: .55; cursor: default; }
+.editForm .error { margin-top: 16px; }
+.images { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.images img { max-width: min(100%, 260px); max-height: 260px; width: auto; height: auto; object-fit: contain; border: 1px solid var(--line); border-radius: 12px; background: white; }
+.publication { margin-top: 34px; padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.publication h2 { margin: 0 0 12px; }
+.publication ul { margin: 0 0 18px; padding-left: 20px; font-size: 13px; line-height: 1.9; }
+.publication button { padding: 11px 17px; border: 0; border-radius: 8px; background: var(--orange-dark); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+.publication button:disabled { opacity: .55; cursor: default; }
+.stockEditors { margin-top: 32px; }
+.stockEditors h2 { margin-bottom: 14px; }
+.stockForm { margin: 14px 0; padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.stockForm > strong { display: block; font-size: 13px; }
+.stockForm code { overflow-wrap: anywhere; font-size: 11px; }
+.stockForm p { color: var(--muted); font-size: 12px; }
+.stockForm .formGrid { margin: 18px 0; }
+.stockForm .formGrid label { display: grid; gap: 7px; font-size: 12px; font-weight: 700; }
+.stockForm .formGrid input, .stockForm .formGrid select { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--ink); font: inherit; }
+.stockUnknown { display: flex; align-items: center; gap: 9px; margin-bottom: 18px; font-size: 12px; }
+.stockForm button { padding: 11px 17px; border: 0; border-radius: 8px; background: var(--orange-dark); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+.stockForm button:disabled { opacity: .55; cursor: default; }
+@media (max-width: 650px) { .panel { padding-top: 30px; } .tableWrap table { min-width: 680px; } .formGrid { grid-template-columns: 1fr; } }

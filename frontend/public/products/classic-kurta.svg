@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="480" viewBox="0 0 400 480" role="img" aria-label="Classic Black Kurta">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#111"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="480" fill="url(#bg)"/>
+  <path d="M125 95 L200 68 L275 95 L255 395 L145 395 Z" fill="#333" stroke="#555" stroke-width="2"/>
+  <ellipse cx="200" cy="98" rx="44" ry="16" fill="#222"/>
+  <text x="200" y="440" fill="#aaa" font-family="Georgia, serif" font-size="22" text-anchor="middle">Classic Kurta</text>
+</svg>

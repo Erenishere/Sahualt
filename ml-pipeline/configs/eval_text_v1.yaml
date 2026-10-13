@@ -1,0 +1,88 @@
+protocol_version: EVAL-TEXT-V1
+protocol_status: FROZEN
+# Official protocol eligibility, not evidence that human data or benchmark results exist.
+benchmark_evidence: true
+corpus:
+  registry: corpora/product_text_v1.json
+  id: PRODUCT-TEXT-V1
+  sha256: 5067202e69fbe0dfd61601e23cfe037a88fcc39a533c923dbdab270e0208e43f
+  record_count: 400
+queries:
+  authorship: human
+  scope: semantic-text-only-no-structured-filters
+  language_tags: [en]
+  classes: [title_terms, attribute_focused, paraphrase, contrastive, sparse_description]
+  min_total: 40
+  min_per_split: {dev: 20, test: 20}
+  min_intent_groups_per_split: {dev: 20, test: 20}
+  min_class_per_split: 1
+  max_characters: 512
+  split_assignment: coordinator-declared-before-retrieval-and-labeling
+  intent_groups: disjoint-between-dev-and-test
+  duplicate_detection: nfkc-control-separators-whitespace-casefold-for-detection-only
+  text_policy: preserve-human-text-no-generated-queries-or-translation
+judgments:
+  provenance: human_manual
+  grades: [0, 1, 2]
+  binary_relevance_min_grade: 1
+  coverage: exhaustive
+  judges_per_query_product: 2
+  fixed_judge_pair_per_query: true
+  query_author_may_judge: false
+  disagreements: third-human-adjudicator-required
+  adjudicator_may_be_primary_judge: false
+  query_author_may_adjudicate: true
+  positive_rationale_required: true
+  unjudged: error-never-implicit-zero
+  zero_relevance: retain-and-report-separately
+  require_answerable_query_each_split: true
+metrics:
+  primary: ndcg_at_10
+  required: [precision_at_1, precision_at_5, precision_at_10, recall_at_5, recall_at_10, mrr, ndcg_at_5, ndcg_at_10, hit_rate_at_5, no_result_rate, no_answer_false_positive_rate]
+  binary_relevance: grade-at-least-1
+  precision_denominator: k
+  recall_denominator: all-relevant-products-in-complete-corpus
+  reciprocal_rank_scope: full-returned-ranking-up-to-complete-corpus
+  ndcg_gain: two-to-grade-minus-one
+  ndcg_discount: log2-rank-plus-one
+  ndcg_ideal: all-judged-corpus-products
+  quality_aggregation: equal-query-macro-over-answerable-queries-per-split
+  zero_relevance_quality: excluded-with-explicit-count-not-dropped-from-dataset
+  no_result_denominator: all-queries-per-split
+  short_rankings: unreturned-ranks-nonrelevant-precision-denominator-unchanged
+ranking:
+  unit: unique-canonical-product-uuid
+  score_order: descending-finite-score
+  exact_ties: canonical-lowercase-uuid-ascending
+  duplicate_or_unknown_products: error
+  missing_results: retained-as-empty-ranking
+development:
+  training: none
+  tuning: dev-only
+  test: held-out-no-parameter-selection-or-query-editing
+  labels_visibility: coordinator-controls-test-label-access
+  comparisons: paired-identical-corpus-queries-judgments-and-protocol
+  uncertainty: paired-intent-group-cluster-bootstrap-10000-resamples-seed-42
+  confidence_interval: 95-percent-percentile-linear-quantiles
+  text_quality_thresholds: none
+  proposal_plus_10_percent: full-multimodal-hybrid-vs-lexical-only-not-text-v1-gate
+latency:
+  query_order: sha256-seed-and-query-id-then-query-id
+  seed: 42
+  warmups_per_query: 1
+  measured_repeats_per_query: 5
+  execution: serial-warm-process-same-idle-device
+  aggregation: all-query-repeat-observations-linear-p50-p95
+  scopes: [query_preparation, query_embedding, branch_retrieval, fusion, ml_end_to_end]
+  excluded_from_query_latency: [downloads, model_load, corpus_load, index_build, http_network, business_enrichment]
+  report: [p50, p95, hardware, versions, thread_counts, cold_setup_cost]
+exclusions:
+  candidate_corpus: none-beyond-frozen-corpus
+  query_rejections: [invalid_schema, duplicate_text, split_intent_leakage, unsupported_language, nonsemantic_scope]
+  semantic_scope_screening: human-before-freeze-not-model-based
+  performance_based_query_removal: forbidden
+reporting:
+  include: [corpus_id, corpus_sha256, protocol_sha256, queries_sha256, qrels_sha256, label_provenance, counts, zero_relevance_counts, all_query_rankings, versions, timing_scopes, failure_analysis]
+  multilingual_claims: none-english-only-v1
+  lexical_baseline: postgresql-fts-after-adr-ml-002
+  bm25: only-explicitly-approved-interim-adr

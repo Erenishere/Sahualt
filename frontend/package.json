@@ -1,0 +1,31 @@
+{
+  "name": "sahulat-ai-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "description": "Sahulat AI Commerce MVP — standard Next.js frontend",
+  "overrides": {
+    "postcss": "8.5.23"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.5.0",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.0"
+  }
+}

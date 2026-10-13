@@ -1,0 +1,30 @@
+{
+  "schema_version": "voice-baseline-pilot-recordings-v1",
+  "source_id": "SAHULAT-FIRST-PARTY-VOICE-PILOT-V1",
+  "recordings": [
+    {
+      "sample_id": "UR_001",
+      "speaker_id": "SPK_001",
+      "language_group": "ur",
+      "audio_path": "UR_001.wav",
+      "audio_sha256": "replace-with-64-lowercase-hex-characters",
+      "reference_text": "Mujhe black kurta chahiye",
+      "reference_script": "latin",
+      "reference_status": "human_verified",
+      "reference_transcriber_id": "ANNOTATOR_002",
+      "reference_reviewer_id": "ANNOTATOR_001",
+      "reference_reviewed_at": "YYYY-MM-DD",
+      "recording_source": "fresh_human_recording",
+      "recording_source_review_status": "human_verified",
+      "recording_reviewer_id": "COLLECTION_REVIEWER_001",
+      "recording_reviewed_at": "YYYY-MM-DD",
+      "tts_generated": false,
+      "recorded_at": "YYYY-MM-DD",
+      "roman_urdu_reference": null,
+      "roman_urdu_reference_status": null,
+      "roman_urdu_reference_reviewer_id": null,
+      "roman_urdu_reference_reviewed_at": null,
+      "commerce_annotation": null
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+evaluation_version: EVAL-VISUAL-V1
+dataset:
+  source: usman8/khaadis-clothes-data-with-images
+  version: '1'
+  archive_sha256: f268adbd70a165d1c1ed820ce68968aa6e4954581eb44496c9b508b813c3064e
+  source_url: https://www.kaggle.com/datasets/usman8/khaadis-clothes-data-with-images
+  manifest: ../data/khaadi/manifest.json
+  root: ../data/raw/khaadi
+split:
+  artifact: ../artifacts/eval_visual_v1/split.json
+  seed: 42
+  method: per-product-sha256-floor-v1
+  query_fraction: 0.2
+  singleton_policy: gallery-only
+  provenance: new-split-not-historical
+audit:
+  policy: binary-and-exif-rgb-sha256-v1
+  within_product_duplicates: retain-lexicographically-first-image-id
+  cross_product_duplicates: exclude-all-members
+  max_bytes: 20971520
+  max_pixels: 25000000
+  min_side: 16
+  max_side: 12000
+  allowed_formats: [JPEG, PNG, WEBP]
+relevance: exact-product-id-equality
+metrics:
+  k: 5
+  precision_denominator: k
+  ap_denominator: min-k-total-relevant
+  ndcg: binary-log2-rank-plus-one
+  mrr: full-gallery
+ranking:
+  similarity: normalized-float32-inner-product
+  ties: image-id-ascending
+  evaluation_unit: image
+runtime:
+  batch_size: 16
+  num_workers: 0
+  seed: 42
+  precision: fp32
+  warmup_images: 2
+  query_timing: serial-single-image-includes-validation-preprocessing-transfer
+models:
+  openclip:
+    identifier: laion/CLIP-ViT-B-32-laion2B-s34B-b79K
+    revision: 1a25a446712ba5ee05982a381eed697ef9b435cf
+    architecture: ViT-B-32
+    weights_file: open_clip_model.safetensors
+  fashionclip:
+    identifier: patrickjohncyh/fashion-clip
+    revision: 7e3ba62ce16b379a1ab479346b66f192e76f51b7
+    architecture: ViT-B-32
+    weights_file: model.safetensors

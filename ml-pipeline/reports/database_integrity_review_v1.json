@@ -1,0 +1,693 @@
+{
+  "audit_foreign_keys": [
+    {
+      "constraint_name": "fk_audit_log_actor_user",
+      "constraint_type": "FOREIGN KEY",
+      "definition": "FOREIGN KEY (actor_user_id) REFERENCES iam.users(id) ON DELETE SET NULL",
+      "delete_action": "SET NULL",
+      "schema_name": "audit",
+      "table_name": "audit_log"
+    },
+    {
+      "constraint_name": "fk_audit_log_vendor",
+      "constraint_type": "FOREIGN KEY",
+      "definition": "FOREIGN KEY (vendor_id) REFERENCES catalog.vendors(id) ON DELETE SET NULL",
+      "delete_action": "SET NULL",
+      "schema_name": "audit",
+      "table_name": "audit_log"
+    }
+  ],
+  "cascade_foreign_keys": [
+    "fk_image_external_refs_image",
+    "fk_product_external_refs_product"
+  ],
+  "checks": {
+    "active_listing_commercial_state_constrained": true,
+    "all_prefix_overlaps_justified": true,
+    "audit_foreign_keys_preserve_history": true,
+    "base_schema_validation_green": true,
+    "draft_listing_allows_null_currency": true,
+    "external_product_identity_unique": true,
+    "inventory_null_and_bounds_constraints": true,
+    "migration_checksum_matches_source": true,
+    "no_exact_duplicate_indexes": true,
+    "only_external_lineage_refs_cascade": true,
+    "public_has_no_table_privileges": true,
+    "required_constraints_present": true,
+    "required_indexes_present": true,
+    "same_product_variant_image_fk": true,
+    "single_unarchived_default_variant": true
+  },
+  "database": "sahulat_ai_dev",
+  "deferred_runtime_controls": {
+    "audit_append_only_grants": "PUBLIC currently has no privileges. When runtime roles are introduced, grant audit INSERT/SELECT as needed and withhold UPDATE, DELETE, and TRUNCATE.",
+    "least_privilege_application_role": "No application login role exists. postgres is migration/local administration only; create a non-superuser runtime role before backend or worker deployment."
+  },
+  "generated_at": "2026-09-10T18:45:23.998Z",
+  "index_analysis": {
+    "constraint_backed": 22,
+    "exact_duplicates": [],
+    "explicit": 23,
+    "prefix_candidates": [
+      {
+        "classification": "INTENTIONAL",
+        "indexes": [
+          "product_variants_pkey",
+          "uq_product_variants_id_product"
+        ],
+        "longer_key": [
+          "id",
+          "product_id"
+        ],
+        "predicate": null,
+        "reason": "Composite uniqueness is required as the target of the same-product image foreign key.",
+        "schema_name": "catalog",
+        "shorter_key": [
+          "id"
+        ],
+        "table_name": "product_variants"
+      }
+    ],
+    "total": 45
+  },
+  "indexes": [
+    {
+      "constraint_name": "audit_log_pkey",
+      "index_name": "audit_log_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "audit",
+      "table_name": "audit_log"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_audit_log_actor_user_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "actor_user_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "audit",
+      "table_name": "audit_log"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_audit_log_entity",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "entity_type",
+        "entity_id",
+        "created_at"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "audit",
+      "table_name": "audit_log"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_audit_log_vendor_id_created_at",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "vendor_id",
+        "created_at"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "audit",
+      "table_name": "audit_log"
+    },
+    {
+      "constraint_name": "categories_pkey",
+      "index_name": "categories_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "categories"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_categories_parent_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "parent_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "categories"
+    },
+    {
+      "constraint_name": "uq_categories_slug",
+      "index_name": "uq_categories_slug",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "slug"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "categories"
+    },
+    {
+      "constraint_name": "image_external_refs_pkey",
+      "index_name": "image_external_refs_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "image_external_refs"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_image_external_refs_image_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "image_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "image_external_refs"
+    },
+    {
+      "constraint_name": "uq_image_external_refs_source_external",
+      "index_name": "uq_image_external_refs_source_external",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "source_system",
+        "external_image_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "image_external_refs"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_listings_currency_price",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "currency",
+        "price"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "listings"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_listings_status_availability",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "status",
+        "availability"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "listings"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_listings_variant_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "variant_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "listings"
+    },
+    {
+      "constraint_name": "listings_pkey",
+      "index_name": "listings_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "listings"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_product_external_refs_product_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "product_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_external_refs"
+    },
+    {
+      "constraint_name": "product_external_refs_pkey",
+      "index_name": "product_external_refs_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_external_refs"
+    },
+    {
+      "constraint_name": "uq_product_external_refs_source_external",
+      "index_name": "uq_product_external_refs_source_external",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "source_system",
+        "external_product_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_external_refs"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_product_images_product_sort_order",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "product_id",
+        "sort_order"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_images"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_product_images_variant_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "variant_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_images"
+    },
+    {
+      "constraint_name": "product_images_pkey",
+      "index_name": "product_images_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_images"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "uq_product_images_primary_product",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "product_id"
+      ],
+      "method": "btree",
+      "predicate": "((is_primary = true) AND (variant_id IS NULL) AND (archived_at IS NULL))",
+      "schema_name": "catalog",
+      "table_name": "product_images"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "uq_product_images_primary_variant",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "variant_id"
+      ],
+      "method": "btree",
+      "predicate": "((is_primary = true) AND (variant_id IS NOT NULL) AND (archived_at IS NULL))",
+      "schema_name": "catalog",
+      "table_name": "product_images"
+    },
+    {
+      "constraint_name": "uq_product_images_storage_key",
+      "index_name": "uq_product_images_storage_key",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "storage_key"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_images"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_product_variants_product_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "product_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_variants"
+    },
+    {
+      "constraint_name": "product_variants_pkey",
+      "index_name": "product_variants_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_variants"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "uq_product_variants_default_active",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "product_id"
+      ],
+      "method": "btree",
+      "predicate": "((is_default = true) AND (archived_at IS NULL))",
+      "schema_name": "catalog",
+      "table_name": "product_variants"
+    },
+    {
+      "constraint_name": "uq_product_variants_id_product",
+      "index_name": "uq_product_variants_id_product",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "id",
+        "product_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "product_variants"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "uq_product_variants_product_variant_code_active",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "product_id",
+        "variant_code"
+      ],
+      "method": "btree",
+      "predicate": "(archived_at IS NULL)",
+      "schema_name": "catalog",
+      "table_name": "product_variants"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_products_category_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "category_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "products"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_products_created_by_user_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "created_by_user_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "products"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_products_updated_by_user_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "updated_by_user_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "products"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_products_vendor_status",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "vendor_id",
+        "status"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "products"
+    },
+    {
+      "constraint_name": "products_pkey",
+      "index_name": "products_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "products"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_vendors_created_by_user_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "created_by_user_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "vendors"
+    },
+    {
+      "constraint_name": "uq_vendors_slug",
+      "index_name": "uq_vendors_slug",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "slug"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "vendors"
+    },
+    {
+      "constraint_name": "vendors_pkey",
+      "index_name": "vendors_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "catalog",
+      "table_name": "vendors"
+    },
+    {
+      "constraint_name": "uq_users_email_normalized",
+      "index_name": "uq_users_email_normalized",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "email_normalized"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "iam",
+      "table_name": "users"
+    },
+    {
+      "constraint_name": "users_pkey",
+      "index_name": "users_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "iam",
+      "table_name": "users"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_vendor_memberships_user_id",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "user_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "iam",
+      "table_name": "vendor_memberships"
+    },
+    {
+      "constraint_name": "uq_vendor_memberships_vendor_user",
+      "index_name": "uq_vendor_memberships_vendor_user",
+      "is_primary": false,
+      "is_unique": true,
+      "key_columns": [
+        "vendor_id",
+        "user_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "iam",
+      "table_name": "vendor_memberships"
+    },
+    {
+      "constraint_name": "vendor_memberships_pkey",
+      "index_name": "vendor_memberships_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "iam",
+      "table_name": "vendor_memberships"
+    },
+    {
+      "constraint_name": null,
+      "index_name": "ix_outbox_events_pending",
+      "is_primary": false,
+      "is_unique": false,
+      "key_columns": [
+        "occurred_at",
+        "id"
+      ],
+      "method": "btree",
+      "predicate": "((status = 'pending'::text) AND (processed_at IS NULL))",
+      "schema_name": "integration",
+      "table_name": "outbox_events"
+    },
+    {
+      "constraint_name": "outbox_events_pkey",
+      "index_name": "outbox_events_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "integration",
+      "table_name": "outbox_events"
+    },
+    {
+      "constraint_name": "schema_migrations_pkey",
+      "index_name": "schema_migrations_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "migration_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "integration",
+      "table_name": "schema_migrations"
+    },
+    {
+      "constraint_name": "inventory_balances_pkey",
+      "index_name": "inventory_balances_pkey",
+      "is_primary": true,
+      "is_unique": true,
+      "key_columns": [
+        "listing_id"
+      ],
+      "method": "btree",
+      "predicate": null,
+      "schema_name": "inventory",
+      "table_name": "inventory_balances"
+    }
+  ],
+  "migration": {
+    "applied_at": "2026-09-10T18:03:31.134Z",
+    "checksum": "956ac05cbf94f1feae03b14feb7d69210d39b3e9e133e2f897a0928017a1934d",
+    "migration_id": "20260910_001_catalog_core_v1",
+    "postgres_version": "18.6"
+  },
+  "postgresql_version": "18.6",
+  "review_version": "db-contract-v1-integrity-review",
+  "role_posture": {
+    "current_role": "postgres",
+    "current_role_superuser": true,
+    "non_system_login_roles": [
+      {
+        "role": "postgres",
+        "superuser": true
+      }
+    ],
+    "public_table_privilege_count": 0
+  },
+  "status": "GREEN"
+}

@@ -1,0 +1,40 @@
+# Local platform dependencies. Business migrations are applied explicitly, not at container startup.
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.6-pg18
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_ADMIN_PASSWORD:?Set POSTGRES_ADMIN_PASSWORD in a local .env file}
+      POSTGRES_DB: ${DATABASE_NAME:-sahulat_dev}
+    ports:
+      - "5432:5432"
+    volumes:
+      - sahulat_postgres_data:/var/lib/postgresql
+      - ./ml-pipeline/database/migrations:/opt/sahulat/migrations:ro
+      - ./backend/database/migrations:/opt/sahulat/backend-migrations:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  # ml-api:
+  #   build:
+  #     context: .
+  #     dockerfile: infrastructure/docker/ml.Dockerfile
+  # backend:
+  #   build:
+  #     context: .
+  #     dockerfile: infrastructure/docker/backend.Dockerfile
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: infrastructure/docker/frontend.Dockerfile
+
+volumes:
+  sahulat_postgres_data:

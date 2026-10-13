@@ -1,0 +1,37 @@
+.page { min-height: 100vh; background: var(--paper); color: var(--ink); }
+.panel { max-width: 720px; margin: 0 auto; padding: 48px clamp(20px, 5vw, 64px) 80px; }
+.eyebrow { margin: 0; color: var(--orange-dark); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.panel h1 { margin: 8px 0 10px; font-family: Georgia, serif; font-size: clamp(34px, 5vw, 54px); font-weight: 500; letter-spacing: -.035em; }
+.intro { margin: 0 0 28px; color: var(--muted); line-height: 1.6; }
+.form, .notice { display: grid; gap: 20px; padding: clamp(22px, 4vw, 36px); border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 12px 35px rgba(18,33,29,.05); }
+.form label { display: grid; gap: 8px; font-size: 12px; font-weight: 800; }
+.form input { width: 100%; min-height: 46px; padding: 0 13px; border: 1px solid #c8c5bb; border-radius: 10px; background: #fff; color: var(--ink); font-size: 14px; }
+.form input:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.form button { min-height: 45px; padding: 10px 19px; border: 0; border-radius: 10px; background: var(--orange); color: white; font-size: 13px; font-weight: 800; }
+.form button:disabled { cursor: not-allowed; opacity: .5; }
+.notice h2 { margin: 0; font-family: Georgia, serif; font-size: 23px; font-weight: 500; }
+.notice p { margin: 0; line-height: 1.6; }
+.error { margin: 0; color: #9a3927; font-size: 13px; }
+
+@media (min-width: 721px) {
+  .page {
+    height: 100dvh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .panel {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 24px;
+  }
+
+  .intro { margin-bottom: 18px; }
+  .form, .notice { gap: 14px; padding: 24px; }
+}

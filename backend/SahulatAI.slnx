@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SahulatAI.Api/SahulatAI.Api.csproj" />
+    <Project Path="src/SahulatAI.Application/SahulatAI.Application.csproj" />
+    <Project Path="src/SahulatAI.Domain/SahulatAI.Domain.csproj" />
+    <Project Path="src/SahulatAI.Infrastructure/SahulatAI.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SahulatAI.UnitTests/SahulatAI.UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/SahulatAI.DemoCatalogSeeder/SahulatAI.DemoCatalogSeeder.csproj" />
+  </Folder>
+</Solution>

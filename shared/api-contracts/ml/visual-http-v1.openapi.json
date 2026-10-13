@@ -1,0 +1,281 @@
+{
+  "components": {
+    "schemas": {
+      "ErrorDetails": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetails",
+        "type": "object"
+      },
+      "ErrorResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorDetails"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse",
+        "type": "object"
+      },
+      "ImageResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "visual-http-v1",
+            "default": "visual-http-v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "embedding_version": {
+            "title": "Embedding Version",
+            "type": "string"
+          },
+          "identity_scope": {
+            "const": "external",
+            "default": "external",
+            "title": "Identity Scope",
+            "type": "string"
+          },
+          "model": {
+            "title": "Model",
+            "type": "string"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/ImageResult"
+            },
+            "title": "Results",
+            "type": "array"
+          },
+          "source_system": {
+            "title": "Source System",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_system",
+          "model",
+          "embedding_version",
+          "results"
+        ],
+        "title": "ImageResponse",
+        "type": "object"
+      },
+      "ImageResult": {
+        "additionalProperties": false,
+        "properties": {
+          "matched_image_id": {
+            "title": "Matched Image Id",
+            "type": "string"
+          },
+          "product_id": {
+            "title": "Product Id",
+            "type": "string"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          }
+        },
+        "required": [
+          "product_id",
+          "score",
+          "matched_image_id"
+        ],
+        "title": "ImageResult",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "Sahulat AI Visual Runtime",
+    "version": "visual-http-v1"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v1/search/image": {
+      "post": {
+        "operationId": "query_image_api_v1_search_image_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "image": {
+                    "format": "binary",
+                    "type": "string"
+                  },
+                  "top_k": {
+                    "default": 5,
+                    "maximum": 100.0,
+                    "minimum": 1.0,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "image"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Malformed multipart/image or invalid declared length"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Upload timeout or disconnect"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request/image byte limit exceeded"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unsupported request encoding/media or mismatched decoded image format"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, duplicate, unknown or invalid multipart fields"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unexpected visual service failure"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Visual service unavailable or busy"
+          }
+        },
+        "summary": "Query Image"
+      }
+    },
+    "/health/live": {
+      "get": {
+        "operationId": "live_health_live_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "title": "Response Live Health Live Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Live"
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "operationId": "ready_health_ready_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "title": "Response Ready Health Ready Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Visual service unavailable or busy"
+          }
+        },
+        "summary": "Ready"
+      }
+    }
+  }
+}

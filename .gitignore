@@ -1,0 +1,53 @@
+# Environment
+.env
+**/.env
+!.env.example
+!**/.env.example
+!**/.env.visual-reader
+
+# Python / ML pipeline
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/*.egg-info/
+ml-pipeline/.cache/
+ml-pipeline/artifacts/
+ml-pipeline/data/raw/
+ml-pipeline/dist/
+ml-pipeline/build/
+**/*.safetensors
+**/*.pt
+**/*.pth
+
+# Node / frontend
+frontend/node_modules/
+frontend/.next/
+frontend/.next-dev/
+frontend/out/
+frontend/.turbo/
+**/*.tsbuildinfo
+
+# .NET / backend
+backend/**/bin/
+backend/**/obj/
+backend/**/.vs/
+backend/.local-runtime-secrets.json
+backend/.local-demo-vendor-secrets.json
+backend/.local-media/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local pytest temp (Windows)
+ml-pipeline/.pytest_tmp/
+ml-pipeline/.pytest_*/
+ml-pipeline/.pytest_alt_tmp*/
+ml-pipeline/.pytest_*_gate_tmp*/
+
+# Separate generated Sites prototype
+sites-prototype/

@@ -1,0 +1,39 @@
+{
+  "version": "voice-alt-models-v1",
+  "models": {
+    "pashto-ghag": {
+      "name": "pashto-ghag-whisper-medium",
+      "repository": "Nasimbahar/pashto-ghag-whisper-medium-asr",
+      "revision": "ed20e00d47d0852ed24f07b4370c0bdac2e5f241",
+      "license": "apache-2.0",
+      "language": "ps",
+      "base_model": "openai/whisper-medium",
+      "declared_datasets": ["mozilla-foundation/common_voice_17_0"],
+      "training_declaration": "Pashto Common Voice validated speech; 73355 training clips, 54.391 hours",
+      "readme_blob_id": "f4ba2ae8f949f0fb1006dd15bd0887cbe9c97033",
+      "weights_sha256": "db85fb96f6dfe2026be8557a20494133b37630953420a6bf50d542e0d4fa0240",
+      "weights_bytes": 3055544304,
+      "fleurs_training_declared": false,
+      "evaluation_independence": false,
+      "reason": "No FLEURS fine-tuning is declared; complete training manifests and base-model overlap are not independently verified",
+      "evidence_class": "INDEPENDENCE_NOT_VERIFIED"
+    },
+    "buzzasr-sindhi": {
+      "name": "buzzasr-sindhi",
+      "repository": "BuzzASR/sindhi",
+      "revision": "8e85f09a5c0b17c635ffa8fd124b1efa56fcb5c7",
+      "license": "mit",
+      "language": "sd",
+      "base_model": "openai/whisper-large-v3",
+      "declared_datasets": ["google/fleurs"],
+      "training_declaration": "FLEURS + Common Voice Corpus 25.0 + text-only Goldfish; full fine-tuning with native tokenizer replacement",
+      "readme_blob_id": "a814dd4984c97435941f507b47833db84ec427d2",
+      "weights_sha256": "0e3e298e79f1496ab1d64fb82b336986068e824930eec4d17cb99ee688b92e14",
+      "weights_bytes": 3091247456,
+      "fleurs_training_declared": true,
+      "evaluation_independence": false,
+      "reason": "model training includes FLEURS",
+      "evidence_class": "CONTAMINATED / REFERENCE-ONLY"
+    }
+  }
+}

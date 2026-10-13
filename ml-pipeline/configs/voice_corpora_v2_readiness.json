@@ -1,0 +1,194 @@
+{
+  "schema_version": "eval-voice-corpora-v2-readiness-v1",
+  "protocol": {
+    "id": "EVAL-VOICE-CORPORA-V2",
+    "amendment_id": "AUDIO-ACQUISITION-READINESS-V1",
+    "status": "PREREGISTERED_ACQUISITION_READINESS",
+    "base_protocol_gate_sha256": "e2e5c75293d2da0ad5a6b3b156afafd223ece61f334c89f1addccd810a6343b8",
+    "base_audit_gate_sha256": "e4edea03276fad080e42e87c965f2c1c5149f875772906de15f0138dbf7a17f4",
+    "base_audit_sha256": "128e619150698c58f98d80c62c5d8bf56cf4242102645d6bc4b99806d81fc479",
+    "no_audio_download": true,
+    "no_model_execution": true,
+    "no_training_or_tuning": true
+  },
+  "sources": {
+    "south_asian_english": {
+      "source_type": "mozilla_data_collective",
+      "source_url": "https://mozilladatacollective.com/datasets/cmrt70sar001umm07jwxzhw89",
+      "dataset_id": "cmrt70sar001umm07jwxzhw89",
+      "title": "Common Voice Scripted Speech 26.0 - South Asian English (India, Pakistan, Sri Lanka)",
+      "release_date": "2026-07-20",
+      "source_release": "cv-corpus-26.0-2026-06-12",
+      "archive": "common-voice-scripted-speech-26-0-south-9d6029b6.tar.gz",
+      "archive_bytes_display": "3.83 GB",
+      "format": ["TSV", "MP3"],
+      "declared_license": "cc0-1.0",
+      "test_clips": 3864,
+      "test_speakers": 81,
+      "test_hours": 5.94,
+      "speaker_disjoint_splits": true,
+      "accent_scope": "self_declared_exact_tag_india_pakistan_sri_lanka_not_pakistan_only",
+      "rights": {
+        "access_terms": "PUBLIC_MOZILLA_DATA_COLLECTIVE_DOWNLOAD",
+        "local_asr_evaluation": "CONDITIONALLY_ALLOWED",
+        "speaker_reidentification": "FORBIDDEN",
+        "rehosting": "FORBIDDEN",
+        "redistribution": "REHOSTING_AND_RESHARING_FORBIDDEN",
+        "review_basis": "PUBLISHER_PAGE"
+      },
+      "acquisition_status": "BLOCKED_UNTIL_SELECTED_MANIFEST_FREEZE"
+    },
+    "urduspeech": {
+      "repository": "ASLP-lab/UrduSpeech",
+      "revision": "16dd380cfd9049a3db7f06a98e878086916bf833",
+      "declared_license": "cc-by-4.0",
+      "structured_hub_license": "MISSING",
+      "published_media_origins": ["YouTube", "Pakistan Television"],
+      "source_url": "https://huggingface.co/datasets/ASLP-lab/UrduSpeech/tree/16dd380cfd9049a3db7f06a98e878086916bf833",
+      "rights": {
+        "dataset_declared_license": "CC-BY-4.0_ATTRIBUTION_REQUIRED",
+        "access_terms": "PUBLIC_PINNED_HUGGING_FACE_REVISION",
+        "local_asr_evaluation": "PENDING_ORIGINAL_SOURCE_MEDIA_RIGHTS_REVIEW",
+        "media_redistribution": "BLOCKED_PENDING_SOURCE_RIGHTS_REVIEW",
+        "rehosting": "NOT_AUTHORIZED_PENDING_SOURCE_RIGHTS_REVIEW",
+        "review_basis": "PINNED_DATASET_CARD_AND_SOURCE_MEDIA_ORIGINS"
+      },
+      "rights_status": "PENDING_SOURCE_MEDIA_RIGHTS_REVIEW",
+      "transcription_field": "Transcription",
+      "ground_truth_field": "ground_truth",
+      "authoritative_reference": "PENDING_HUMAN_ADJUDICATION",
+      "mismatch_policy": "EXCLUDE_UNTIL_HUMAN_ADJUDICATED",
+      "acquisition_status": "BLOCKED"
+    },
+    "common_voice_27_sindhi": {
+      "source_type": "mozilla_data_collective",
+      "source_url": "https://mozilladatacollective.com/datasets/cmu5wbmn400bco107vi2n2yhb",
+      "dataset_id": "cmu5wbmn400bco107vi2n2yhb",
+      "release": "cv-corpus-27.0-2026-09-11",
+      "declared_license": "cc0-1.0",
+      "rights": {
+        "local_asr_evaluation": "ALLOWED_BY_STATED_INTENDED_USE",
+        "speaker_reidentification": "FORBIDDEN",
+        "rehosting": "FORBIDDEN",
+        "resharing": "FORBIDDEN",
+        "review_basis": "PUBLISHER_PAGE"
+      },
+      "evaluation_status": "REFERENCE_ONLY",
+      "acquisition_status": "BLOCKED_UNTIL_SELECTED_MANIFEST_FREEZE"
+    },
+    "pashto_audio_visual": {
+      "source_type": "mozilla_data_collective",
+      "dataset_id": "cmuzrhfbd006l07nxoe3inrzq",
+      "source_url": "https://mozilladatacollective.com/datasets/cmuzrhfbd006l07nxoe3inrzq",
+      "declared_license": "cc0-1.0",
+      "rights": {
+        "access_terms": "PUBLIC_MOZILLA_DATA_COLLECTIVE_DOWNLOAD",
+        "license_scope": "PUBLISHER_STATES_CC0_1_0",
+        "local_asr_evaluation": "PENDING_OWNER_CONSENT_DOCUMENTATION_REVIEW",
+        "media_redistribution": "PENDING_OWNER_CONSENT_DOCUMENTATION_REVIEW",
+        "rehosting": "PENDING_OWNER_CONSENT_DOCUMENTATION_REVIEW",
+        "review_basis": "PUBLISHER_PAGE_NOTES_LICENSE_AND_CONSENT_DOCUMENTATION_REVIEW_OUTSTANDING"
+      },
+      "rights_status": "PENDING_CONSENT_AND_REDISTRIBUTION_REVIEW",
+      "consent_and_redistribution_review": "OUTSTANDING",
+      "evaluation_status": "QUARANTINED_AUDIT_ONLY",
+      "acquisition_status": "BLOCKED"
+    },
+    "sindhi_holdout_v1": {
+      "source_type": "fresh_human_collection",
+      "protocol_status": "APPROVED_DATA_PENDING",
+      "rights": {
+        "local_asr_evaluation": "ALLOWED_ONLY_WITH_RECORDED_SPEAKER_PERMISSION",
+        "public_distribution": "NOT_AUTHORIZED_WITHOUT_SEPARATE_EXPLICIT_PERMISSION_AND_LICENSE",
+        "speaker_reidentification": "FORBIDDEN",
+        "review_basis": "PER_RECORDING_CONSENT_AND_USE_PERMISSION"
+      },
+      "required_recordings": 100,
+      "required_speakers": 10,
+      "consent_required": true,
+      "use_permission_required": true,
+      "public_corpus_attestation_required": true,
+      "model_evaluation": "NOT_RUN"
+    }
+  },
+  "transcript_audit": {
+    "classification_version": "voice-transcript-difference-v1",
+    "categories": [
+      "UNICODE_NORMALIZATION_ONLY",
+      "PUNCTUATION_OR_WHITESPACE_ONLY",
+      "SCRIPT_PROFILE_CHANGE",
+      "MISSING_OR_ADDED_WORDS",
+      "SPELLING_OR_TOKEN_SUBSTITUTION",
+      "SEMANTIC_REVIEW_REQUIRED"
+    ],
+    "semantic_classification": "HUMAN_ONLY",
+    "field_preservation": "PINNED_SOURCE_POINTER_PLUS_SEPARATE_SHA256_AND_LENGTHS",
+    "raw_text_in_report": false
+  },
+  "speaker_overlap": {
+    "identifier_interpretation": "PUBLISHED_LABEL_NOT_VERIFIED_PERSON",
+    "reporting_policy": "REPORT_SUBSETS_SEPARATELY_AND_NEVER_CLAIM_POOLED_SPEAKER_INDEPENDENCE",
+    "verified_same_person_policy": "GROUP_BY_PERSON_OR_EXCLUDE_FROM_POOLED_COMPARISON"
+  },
+  "checkpoint_exposure": {
+    "unknown_means_clear": false,
+    "models": {
+      "whisper-large-v3": {
+        "repository": "openai/whisper-large-v3",
+        "revision": "06f233fe06e710322aca913c1bc4249a0d71fce1",
+        "declared_training_evidence": "INCOMPLETE_PUBLIC_CORPUS_INVENTORY",
+        "source_exposure": {
+          "south_asian_english": "UNKNOWN",
+          "urduspeech": "UNKNOWN",
+          "common_voice_27_sindhi": "UNKNOWN",
+          "pashto_audio_visual": "UNKNOWN",
+          "sindhi_holdout_v1": "UNKNOWN_PENDING_SPEAKER_ATTESTATION"
+        }
+      },
+      "mms-1b-all": {
+        "repository": "facebook/mms-1b-all",
+        "revision": "3d33597edbdaaba14a8e858e2c8caa76e3cec0cd",
+        "declared_training_evidence": "FLEURS_IDENTIFIED_IN_MODEL_DOCUMENTATION",
+        "source_exposure": {
+          "south_asian_english": "UNKNOWN",
+          "urduspeech": "UNKNOWN",
+          "common_voice_27_sindhi": "UNKNOWN",
+          "pashto_audio_visual": "UNKNOWN",
+          "sindhi_holdout_v1": "UNKNOWN_PENDING_SPEAKER_ATTESTATION"
+        }
+      },
+      "pashto-ghag": {
+        "repository": "Nasimbahar/pashto-ghag-whisper-medium-asr",
+        "revision": "ed20e00d47d0852ed24f07b4370c0bdac2e5f241",
+        "declared_training_evidence": "COMMON_VOICE_17_PASHTO_DECLARED_BASE_MODEL_EXPOSURE_INCOMPLETE",
+        "source_exposure": {
+          "south_asian_english": "NOT_TARGET_LANGUAGE",
+          "urduspeech": "NOT_TARGET_LANGUAGE",
+          "common_voice_27_sindhi": "NOT_TARGET_LANGUAGE",
+          "pashto_audio_visual": "UNKNOWN",
+          "sindhi_holdout_v1": "NOT_TARGET_LANGUAGE"
+        }
+      },
+      "buzzasr-sindhi": {
+        "repository": "BuzzASR/sindhi",
+        "revision": "8e85f09a5c0b17c635ffa8fd124b1efa56fcb5c7",
+        "declared_training_evidence": "FLEURS_AND_COMMON_VOICE_25_DECLARED",
+        "source_exposure": {
+          "south_asian_english": "NOT_TARGET_LANGUAGE",
+          "urduspeech": "NOT_TARGET_LANGUAGE",
+          "common_voice_27_sindhi": "POSSIBLE_VERSION_FAMILY_OVERLAP",
+          "pashto_audio_visual": "NOT_TARGET_LANGUAGE",
+          "sindhi_holdout_v1": "UNKNOWN_PENDING_SPEAKER_ATTESTATION"
+        }
+      }
+    }
+  },
+  "readiness_criteria": {
+    "dataset_provenance_and_rights": "BLOCKED",
+    "transcript_discrepancies": "BLOCKED_PENDING_HUMAN_ADJUDICATION_OR_EXCLUSION_FREEZE",
+    "speaker_overlap_risk": "DOCUMENTED_IDENTIFIERS_IDENTITY_UNVERIFIED",
+    "checkpoint_overlap_risk": "DOCUMENTED_WITH_UNKNOWNS",
+    "selected_immutable_manifests": "NOT_FROZEN",
+    "sindhi_collection_protocol": "APPROVED_DATA_PENDING"
+  }
+}

@@ -1,0 +1,45 @@
+.page { min-height: 100vh; background: var(--paper); color: var(--ink); }
+.panel { max-width: 1050px; margin: 0 auto; padding: 48px clamp(20px, 5vw, 64px) 80px; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 34px; }
+.header h1 { margin: 8px 0 10px; font-family: Georgia, serif; font-size: clamp(34px, 5vw, 54px); font-weight: 500; letter-spacing: -.035em; line-height: 1.08; }
+.eyebrow, .answerLabel { margin: 0; color: var(--orange-dark); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.subtle, .hint { color: var(--muted); line-height: 1.6; }
+.subtle { margin: 0; font-size: 14px; }
+.hint { margin: 11px 0 0; font-size: 12px; }
+.login, .workspace { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: clamp(22px, 4vw, 36px); box-shadow: 0 12px 35px rgba(18,33,29,.05); }
+.login { display: grid; gap: 20px; max-width: 500px; }
+.workspace { display: grid; gap: 30px; }
+.login h2, .workspace h2, .answer h2 { margin: 0 0 10px; font-family: Georgia, serif; font-size: 23px; font-weight: 500; }
+.login label, .vendorSelect, .askForm { display: grid; gap: 8px; font-size: 12px; font-weight: 800; }
+.login input, .vendorSelect select, .askForm input { width: 100%; min-height: 46px; padding: 0 13px; border: 1px solid #c8c5bb; border-radius: 10px; background: #fff; color: var(--ink); font-size: 14px; }
+.login input:focus-visible, .vendorSelect select:focus-visible, .askForm input:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.vendorSelect { max-width: 390px; }
+.primaryButton { min-height: 45px; padding: 10px 19px; border: 0; border-radius: 10px; background: var(--orange); color: white; font-size: 13px; font-weight: 800; }
+.primaryButton:hover { background: var(--orange-dark); }
+.promptSection { padding-top: 4px; }
+.prompts { display: flex; flex-wrap: wrap; gap: 9px; }
+.prompt { padding: 10px 13px; border: 1px solid var(--line); border-radius: 999px; background: #f7f4ed; color: var(--ink); font-size: 12px; font-weight: 700; text-align: left; }
+.prompt:hover { border-color: var(--orange); background: #fff1e9; }
+.quietButton { padding: 4px; border: 0; background: transparent; color: var(--orange-dark); font-size: 12px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.primaryButton:disabled, .prompt:disabled, .quietButton:disabled { cursor: not-allowed; opacity: .5; }
+.askForm { padding-top: 25px; border-top: 1px solid var(--line); }
+.askRow { display: flex; gap: 10px; }
+.askRow input { flex: 1; min-width: 0; }
+.loading { margin: -10px 0 0; color: var(--muted); font-size: 13px; }
+.selectedProduct { margin: -10px 0 0; overflow-wrap: anywhere; color: var(--muted); font-size: 12px; }
+.answer { padding: clamp(20px, 3vw, 30px); border: 1px solid #bdd5c5; border-radius: 15px; background: #f3f9f4; }
+.answerLabel { margin-bottom: 10px; color: var(--green); }
+.answer h2 { font-size: 21px; }
+.answer > p:not(.answerLabel) { margin: 0 0 18px; line-height: 1.65; font-size: 14px; }
+.answer ul { margin: 0; padding: 0; list-style: none; }
+.answer li { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px solid #d4e4d8; font-size: 12px; }
+.answer li span:first-child { overflow-wrap: anywhere; line-height: 1.6; }
+.answer li span:last-child { display: flex; gap: 12px; flex-shrink: 0; }
+.answer code { color: var(--muted); font-size: 11px; }
+.error { max-width: 850px; margin-top: 18px; padding: 13px 15px; border: 1px solid #e8bab1; border-radius: 10px; background: #fff4f0; color: #9a3927; font-size: 13px; }
+@media (max-width: 650px) {
+  .panel { padding-top: 30px; }
+  .header, .answer li { flex-direction: column; }
+  .askRow { flex-direction: column; }
+  .answer li span:last-child { flex-wrap: wrap; }
+}

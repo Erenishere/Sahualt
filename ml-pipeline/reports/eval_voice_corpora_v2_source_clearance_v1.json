@@ -1,0 +1,411 @@
+{
+  "schema_version": "eval-voice-corpora-v2-source-clearance-v1",
+  "protocol_id": "EVAL-VOICE-CORPORA-V2-SOURCE-CLEARANCE",
+  "record_id": "EVAL-VOICE-CORPORA-V2-SOURCE-CLEARANCE-V1",
+  "status": "PRELIMINARY_RECORDS_PREPARED_ACQUISITION_BLOCKED",
+  "as_of_date": "2026-10-12",
+  "decision_scope": "Technical evidence summary only. Codex is not the source owner, legal counsel, or authorized human approver. No legal permission or evaluation independence is granted by this record.",
+  "review": {
+    "prepared_by": "Codex",
+    "prepared_by_role": "Technical provenance and checkpoint-exposure evidence preparer only",
+    "review_date": "2026-10-12",
+    "authorized_human_decision_reviewer": "NOT_ASSIGNED",
+    "source_owner_responses": "NOT_REQUESTED",
+    "legal_review": "NOT_PERFORMED",
+    "audio_downloaded": false,
+    "models_executed": false,
+    "fine_tuning_performed": false,
+    "frozen_manifests_changed": false,
+    "readiness_rules_changed": false,
+    "external_messages_sent": false
+  },
+  "input_artifact_sha256": {
+    "configs/voice_corpora_v2.json": "1604512c9b39776a77b43ee878e4c8d4ff6f7d238f52c439929e7d17941c5580",
+    "configs/voice_corpora_v2_readiness.json": "47aa30440da20928afd6518e001fe4887083c3a4fce177d4196103145cd9dc8d",
+    "configs/voice_corpora_v2_manifest_freeze.json": "8ff1720bc5c62de579010f17aa9ddf972363290f309152b68a471f8d67801ab9",
+    "configs/gates/eval_voice_corpora_v2_readiness.json": "2f61b59532ce5703b0b02af9466a9533db3aa1b79629c29ab0633e3753b25d15",
+    "configs/gates/eval_voice_corpora_v2_manifest_freeze.json": "0b1b465899cdab0318d45878e60b0d7c9d09817df67a93f51c9ea1305ab499d7",
+    "configs/corpora/eval_voice_corpora_v2_manifest_freeze.json": "625ea4468eb23c3149d54bcc88abe8ce695f039e59f77e14c33ee53aeabd8b6e",
+    "configs/eval_voice_v1.json": "67fb9db4c54bb12ba812b895a2abf5be9e219fa8f83a96481f27d90e56a53fbf",
+    "configs/voice_alt_v1_models.json": "ffa917b79822e036051f09809196b77f420c1dfc8a8759d2dd86b1ae92c3a900"
+  },
+  "gate_state": {
+    "manifest_freeze": "METADATA_MANIFESTS_FROZEN_ACQUISITION_BLOCKED",
+    "audio_acquisition_readiness": "BLOCKED",
+    "source_rights_authority": "configs/corpora/eval_voice_corpora_v2_manifest_freeze.json",
+    "readiness_rules_amended": false,
+    "blocked_source_ids": [
+      "common_voice_27_sindhi",
+      "pashto_audio_visual",
+      "sindhi_holdout_v1",
+      "south_asian_english",
+      "urduspeech"
+    ]
+  },
+  "frozen_urduspeech_manifest_state": {
+    "must_not_be_reselected_or_topped_up_to_target": true,
+    "selected_counts": {
+      "standard_urdu": 200,
+      "code_switched": 200,
+      "pakistani_english": 141
+    },
+    "pakistani_english_nominal_target": 200,
+    "pakistani_english_eligible_total": 141,
+    "pakistani_english_shortfall": 59,
+    "manifest_sha256": {
+      "standard_urdu": "85f853b4186cbe97cc873211707ae82732563dc59ba224d608cba5b367bbaa2a",
+      "code_switched": "7e9dcf1b4b74d5da8c227d0c3b180a6dd2eac3f75cdc696bffc1d82e27cb903d",
+      "pakistani_english": "02461996ada77990b60c11d2b1c7c0fc8c0ef7a18f6a80b4cee83938426cf4a3"
+    },
+    "reporting_requirement": "Report Pakistani English n=141 and uncertainty for its measured metrics; do not add records or change this frozen manifest to meet 200."
+  },
+  "checkpoint_catalog": {
+    "whisper_large_v3": {
+      "repository": "openai/whisper-large-v3",
+      "revision": "06f233fe06e710322aca913c1bc4249a0d71fce1",
+      "declared_license": "Apache-2.0",
+      "published_training_evidence": "Model card describes 1 million hours weakly labeled plus 4 million hours pseudo-labeled audio; it does not provide a complete auditable corpus inventory.",
+      "source_exposure_default": "UNKNOWN",
+      "pinned_readme_sha256": "b05416eb578e9fc65ce137f3401bafdf3bc2feac7448e7dd180dcd367b8cfb52",
+      "evidence_url": "https://huggingface.co/openai/whisper-large-v3/blob/06f233fe06e710322aca913c1bc4249a0d71fce1/README.md"
+    },
+    "mms_1b_all": {
+      "repository": "facebook/mms-1b-all",
+      "revision": "3d33597edbdaaba14a8e858e2c8caa76e3cec0cd",
+      "declared_license": "CC-BY-NC-4.0",
+      "published_training_evidence": "Model card lists google/fleurs as a training dataset and describes the all-languages ASR checkpoint; this does not establish exposure or non-exposure to the new V2 sources.",
+      "source_exposure_default": "UNKNOWN",
+      "separate_model_use_restriction": "Noncommercial license; confirm applicable use before any non-academic, commercial, or product use.",
+      "pinned_readme_sha256": "3c0f40d0b0087814e046376117fda9b1b10cc6fc395301a96218a6f954dde359",
+      "evidence_url": "https://huggingface.co/facebook/mms-1b-all/blob/3d33597edbdaaba14a8e858e2c8caa76e3cec0cd/README.md"
+    },
+    "pashto_ghag": {
+      "repository": "Nasimbahar/pashto-ghag-whisper-medium-asr",
+      "revision": "ed20e00d47d0852ed24f07b4370c0bdac2e5f241",
+      "declared_license": "Apache-2.0",
+      "published_training_evidence": "Model card declares fine-tuning on validated Pashto Common Voice 17 speech; base-model exposure inventory is incomplete.",
+      "source_exposure_default": "UNKNOWN",
+      "pinned_readme_sha256": "af3af0b7a1f5300f2f88f11d1119f961af1676c9130a6767265c6813b0128fde",
+      "evidence_url": "https://huggingface.co/Nasimbahar/pashto-ghag-whisper-medium-asr/blob/ed20e00d47d0852ed24f07b4370c0bdac2e5f241/README.md"
+    },
+    "buzzasr_sindhi": {
+      "repository": "BuzzASR/sindhi",
+      "revision": "8e85f09a5c0b17c635ffa8fd124b1efa56fcb5c7",
+      "declared_license": "MIT",
+      "published_training_evidence": "Model card declares FLEURS, Common Voice Corpus 25.0, and text-only Goldfish data; the checkpoint is fine-tuned from Whisper large-v3.",
+      "source_exposure_default": "UNKNOWN",
+      "pinned_readme_sha256": "b669f80bcdda04e48b2da60f956e1cd3234722e7c06a4c0c5b47a08033b99fe4",
+      "evidence_url": "https://huggingface.co/BuzzASR/sindhi/blob/8e85f09a5c0b17c635ffa8fd124b1efa56fcb5c7/README.md"
+    }
+  },
+  "source_records": [
+    {
+      "source_key": "urduspeech",
+      "record_date": "2026-10-12",
+      "reviewer": {
+        "technical_preparer": "Codex",
+        "authorized_human_clearance_reviewer": "NOT_ASSIGNED",
+        "source_owner_response": "NOT_REQUESTED",
+        "legal_review": "NOT_PERFORMED"
+      },
+      "decision": "PENDING_NOT_CLEARED_FOR_AUDIO_ACQUISITION_OR_LOCAL_EVALUATION",
+      "clearance_decision_date": null,
+      "dataset_identity": {
+        "repository": "ASLP-lab/UrduSpeech",
+        "revision": "16dd380cfd9049a3db7f06a98e878086916bf833",
+        "pinned_dataset_card_readme_sha256": "87703ab066db1eb24988448308476f56aa4c1e7e2db9e41e4c330e30f646cbd6",
+        "declared_license": "CC-BY-4.0",
+        "selected_manifest_status": "FROZEN_METADATA_ONLY",
+        "selected_records": {
+          "standard_urdu": 200,
+          "code_switched": 200,
+          "pakistani_english": 141
+        }
+      },
+      "permitted_use": {
+        "publisher_statement": "The dataset card declares CC-BY-4.0 and describes ASR and code-switching research uses.",
+        "project_approved_use": "Metadata-only audit and frozen metadata-manifest review. No audio acquisition, local ASR evaluation, rehosting, or redistribution is approved by the current project gate.",
+        "future_use_under_review": "Local evaluation of the frozen selected audio only, if underlying media rights and authorized human review approve it; no redistribution or rehosting absent separate authorization."
+      },
+      "checkpoint_exposure": {
+        "whisper_large_v3": "UNKNOWN",
+        "mms_1b_all": "UNKNOWN"
+      },
+      "unresolved_restrictions": [
+        "The dataset card identifies YouTube and Pakistan Television archival content as source material; the dataset-level CC-BY declaration does not by itself document rights to each underlying recording.",
+        "Written evidence from the dataset owner and/or relevant source-rights holders for local ASR evaluation is absent.",
+        "Rehosting and media redistribution remain unauthorized or blocked in the authoritative project rights record.",
+        "Whisper and MMS training-corpus inventories do not establish whether these source recordings or their originating media were seen during pretraining. Keep exposure UNKNOWN."
+      ],
+      "supporting_evidence": [
+        {
+          "title": "UrduSpeech dataset card at the pinned revision",
+          "url": "https://huggingface.co/datasets/ASLP-lab/UrduSpeech/blob/16dd380cfd9049a3db7f06a98e878086916bf833/README.md",
+          "evidence_type": "Pinned README retrieved 2026-10-12; SHA-256 87703ab066db1eb24988448308476f56aa4c1e7e2db9e41e4c330e30f646cbd6",
+          "relevant_facts": "Declares CC-BY-4.0; describes YouTube and Pakistan Television source content; card indicates a separate manually reviewed benchmark."
+        },
+        {
+          "title": "Pinned UrduSpeech repository revision",
+          "url": "https://huggingface.co/datasets/ASLP-lab/UrduSpeech/tree/16dd380cfd9049a3db7f06a98e878086916bf833",
+          "evidence_type": "Project-pinned source revision",
+          "relevant_facts": "The V2 source registry and metadata freeze are pinned to this revision; no audio is acquired by this clearance record."
+        },
+        {
+          "title": "Authoritative project rights record",
+          "url": "../configs/corpora/eval_voice_corpora_v2_manifest_freeze.json",
+          "evidence_type": "Local project registry",
+          "relevant_facts": "Rights status PENDING_SOURCE_MEDIA_RIGHTS_REVIEW; local evaluation PENDING_ORIGINAL_SOURCE_MEDIA_RIGHTS_REVIEW; acquisition BLOCKED."
+        }
+      ],
+      "required_human_evidence": [
+        "A dated rights decision covering the underlying YouTube/PTV-derived audio and the benchmark files, not only the dataset wrapper license.",
+        "Explicit permitted-use scope for private local ASR evaluation, storage, duration, access, and deletion; separately state whether any result excerpts or derived artifacts may be shared.",
+        "Checkpoint exposure review from available model documentation and, if possible, source owners; unknown training exposure must remain UNKNOWN."
+      ]
+    },
+    {
+      "source_key": "south_asian_english",
+      "record_date": "2026-10-12",
+      "reviewer": {
+        "technical_preparer": "Codex",
+        "authorized_human_clearance_reviewer": "NOT_ASSIGNED",
+        "source_owner_response": "NOT_REQUESTED",
+        "legal_review": "NOT_PERFORMED"
+      },
+      "decision": "PUBLISHER_TERMS_DOCUMENTED_PROJECT_CLEARANCE_PENDING_MANIFEST_AND_INDEPENDENCE",
+      "clearance_decision_date": null,
+      "dataset_identity": {
+        "publisher_dataset_id": "cmrt70sar001umm07jwxzhw89",
+        "release": "Common Voice Scripted Speech 26.0; source release cv-corpus-26.0-2026-06-12",
+        "declared_license": "CC0-1.0",
+        "test_clips": 3864,
+        "test_speakers": 81,
+        "speaker_disjoint_split": true,
+        "publisher_archive_filename": "common-voice-scripted-speech-26-0-south-9d6029b6.tar.gz",
+        "accent_scope": "Self-declared combined India, Pakistan, and Sri Lanka accent tag; not Pakistan-only.",
+        "selected_manifest_status": "NOT_FROZEN"
+      },
+      "permitted_use": {
+        "publisher_statement": "Research and development of English ASR is an intended use; CC0-1.0 is declared.",
+        "project_approved_use": "No acquisition until a selected metadata manifest is frozen and the source-specific independence review is complete.",
+        "conditional_future_use": "Local evaluation of a frozen test selection, without speaker identification or rehosting/resharing; preserve the regional accent scope in reporting."
+      },
+      "checkpoint_exposure": {
+        "whisper_large_v3": "UNKNOWN",
+        "mms_1b_all": "UNKNOWN"
+      },
+      "unresolved_restrictions": [
+        "No selected sample IDs or immutable metadata manifest are frozen in this phase.",
+        "The publisher forbids attempting to determine speaker identities and forbids rehosting; redistribution/resharing is not authorized by the project record.",
+        "Whisper and MMS exposure to Common Voice 26 and this exact test material is not documented; remain UNKNOWN.",
+        "This source combines India, Pakistan, and Sri Lanka self-declared accents and cannot support a Pakistan-only claim."
+      ],
+      "supporting_evidence": [
+        {
+          "title": "Common Voice 26.0 South Asian English publisher page",
+          "url": "https://mozilladatacollective.com/datasets/cmrt70sar001umm07jwxzhw89",
+          "evidence_type": "Publisher page reviewed 2026-10-12",
+          "relevant_facts": "CC0-1.0; English ASR research/development intended use; 3,864 test clips and 81 test speakers; speaker-disjoint split; combined India/Pakistan/Sri Lanka accent tag; no identity attempts or rehosting."
+        },
+        {
+          "title": "Authoritative project rights and acquisition record",
+          "url": "../configs/voice_corpora_v2_readiness.json",
+          "evidence_type": "Local project registry",
+          "relevant_facts": "Local ASR evaluation CONDITIONALLY_ALLOWED; acquisition remains BLOCKED_UNTIL_SELECTED_MANIFEST_FREEZE; checkpoint exposure UNKNOWN."
+        }
+      ],
+      "required_human_evidence": [
+        "Freeze a selected test metadata manifest without acquiring audio, then verify publisher split/sample provenance.",
+        "Review exact checkpoint revisions and document whether any source-specific exposure evidence exists; do not upgrade UNKNOWN based only on split labels or missing duplicate matches.",
+        "Confirm project storage/access controls enforce no identity attempt, no rehosting, and no resharing."
+      ]
+    },
+    {
+      "source_key": "pashto_audio_visual",
+      "record_date": "2026-10-12",
+      "reviewer": {
+        "technical_preparer": "Codex",
+        "authorized_human_clearance_reviewer": "NOT_ASSIGNED",
+        "source_owner_response": "NOT_REQUESTED",
+        "legal_review": "NOT_PERFORMED"
+      },
+      "decision": "NOT_CLEARED_OWNER_CONSENT_AND_SOURCE_RIGHTS_REVIEW_REQUIRED",
+      "clearance_decision_date": null,
+      "dataset_identity": {
+        "publisher_dataset_id": "cmuzrhfbd006l07nxoe3inrzq",
+        "title": "Pashto Audio-Visual Speech Corpus",
+        "reported_release_date": "2026-10-08",
+        "declared_license": "CC0-1.0",
+        "publisher_archive_filename": "pashto-audio-visual-speech-corpus-647156b6.tar.gz",
+        "reported_records": 9421,
+        "reported_speakers": 9,
+        "selected_manifest_status": "NOT_FROZEN"
+      },
+      "permitted_use": {
+        "publisher_statement": "The page labels the package CC0-1.0 and describes ASR use; the same page says public redistribution licensing and consent documentation await owner review and that the page is a private draft not submitted for review/publication.",
+        "project_approved_use": "Metadata-only rights review. No audio/video acquisition or local evaluation is approved under the current project record.",
+        "future_use_under_review": "If cleared, the proposed evaluation scope is audio-only local ASR on a frozen eligible selection; do not acquire or use the video modality without separate explicit approval."
+      },
+      "checkpoint_exposure": {
+        "whisper_large_v3": "UNKNOWN",
+        "mms_1b_all": "UNKNOWN",
+        "pashto_ghag": "UNKNOWN"
+      },
+      "unresolved_restrictions": [
+        "The current publisher page contains both a CC0 label and an explicit notice that consent and public-redistribution documentation await owner review; the project retains its blocked status.",
+        "Written owner confirmation must address contributor consent, underlying source-media rights, local audio-only ASR evaluation, extraction from the audiovisual package, storage, and any redistribution.",
+        "The corpus is reported as nine speakers from educated urban Afghanistan demographics and is not representative of all Pashto speakers.",
+        "The pinned Ghag model declares Common Voice 17 Pashto training, but exact audio, speaker, and base-model overlap with this source is not established. Whisper/MMS source exposure is also UNKNOWN."
+      ],
+      "supporting_evidence": [
+        {
+          "title": "Pashto Audio-Visual Speech Corpus publisher page",
+          "url": "https://mozilladatacollective.com/datasets/cmuzrhfbd006l07nxoe3inrzq",
+          "evidence_type": "Publisher page reviewed 2026-10-12",
+          "relevant_facts": "Reports 9,421 recordings and nine contributors; labels the package CC0-1.0 and shows a consented-data compliance tag, but also states consent and public-redistribution documentation await owner review and the page is a private draft not submitted for review/publication. These conflicting statements are not treated as clearance."
+        },
+        {
+          "title": "Pinned Pashto Ghag model card",
+          "url": "https://huggingface.co/Nasimbahar/pashto-ghag-whisper-medium-asr",
+          "evidence_type": "Model author statement; pinned project revision ed20e00d47d0852ed24f07b4370c0bdac2e5f241",
+          "relevant_facts": "Declares Common Voice 17 Pashto training; that is not proof of overlap or independence for this corpus."
+        },
+        {
+          "title": "Authoritative project rights record",
+          "url": "../configs/voice_corpora_v2_readiness.json",
+          "evidence_type": "Local project registry",
+          "relevant_facts": "Rights PENDING_CONSENT_AND_REDISTRIBUTION_REVIEW; local evaluation and redistribution pending owner documentation; QUARANTINED_AUDIT_ONLY; acquisition BLOCKED."
+        }
+      ],
+      "required_human_evidence": [
+        "Written decision from the dataset steward/owners resolving the current page's consent and redistribution caveat and expressly authorizing private local audio-only ASR evaluation.",
+        "Clarify whether audio extraction from the audio-video pairs is allowed and what to do with accompanying video; no video acquisition is in scope now.",
+        "A signed or source-owner-backed provenance and checkpoint exposure review; until then exposure remains UNKNOWN."
+      ]
+    },
+    {
+      "source_key": "common_voice_27_sindhi",
+      "record_date": "2026-10-12",
+      "reviewer": {
+        "technical_preparer": "Codex",
+        "authorized_human_clearance_reviewer": "NOT_ASSIGNED",
+        "source_owner_response": "NOT_REQUESTED",
+        "legal_review": "NOT_PERFORMED"
+      },
+      "decision": "PUBLISHER_TERMS_DOCUMENTED_REFERENCE_ONLY_INDEPENDENCE_AND_MANIFEST_PENDING",
+      "clearance_decision_date": null,
+      "dataset_identity": {
+        "publisher_dataset_id": "cmu5wbmn400bco107vi2n2yhb",
+        "release": "cv-corpus-27.0-2026-09-11",
+        "declared_license": "CC0-1.0",
+        "publisher_archive_filename": "common-voice-scripted-speech-27-0-sindhi-47fa7a15.tar.gz",
+        "official_test_clips": 42,
+        "validated_clips_all_splits": 328,
+        "unresolved_clips_all_splits": 65569,
+        "selected_manifest_status": "NOT_FROZEN"
+      },
+      "permitted_use": {
+        "publisher_statement": "ASR training/evaluation is an intended use under CC0-1.0.",
+        "project_approved_use": "Reference-only metadata review; no audio acquisition or independent model-selection evaluation yet.",
+        "conditional_future_use": "A frozen selection drawn only from eligible validated official test clips may be evaluated locally if source-specific review allows; no speaker identification, rehosting, or resharing."
+      },
+      "checkpoint_exposure": {
+        "whisper_large_v3": "UNKNOWN",
+        "mms_1b_all": "UNKNOWN",
+        "buzzasr_sindhi": {
+          "status": "UNKNOWN",
+          "known_risk": "POSSIBLE_VERSION_FAMILY_OVERLAP",
+          "basis": "BuzzASR declares Common Voice Corpus 25.0 training; the candidate is Common Voice 27.0. Exact sample/audio/speaker overlap across releases has not been established."
+        }
+      },
+      "unresolved_restrictions": [
+        "Do not attempt speaker identification, rehost, or reshare the source dataset.",
+        "Only 328 clips are validated across the source and the official test split has 42; the remaining 65,569 clips are unresolved and are not ground truth without human review.",
+        "BuzzASR training on Common Voice 25 makes Common Voice 27 a possible release-family overlap; retain REFERENCE_ONLY/UNKNOWN until exact overlap and source provenance are established.",
+        "No selected metadata manifest is frozen; the official test label alone does not satisfy the project acquisition gate."
+      ],
+      "supporting_evidence": [
+        {
+          "title": "Common Voice Scripted Speech 27.0 Sindhi publisher page",
+          "url": "https://mozilladatacollective.com/datasets/cmu5wbmn400bco107vi2n2yhb",
+          "evidence_type": "Publisher page reviewed 2026-10-12",
+          "relevant_facts": "CC0-1.0; intended ASR training/evaluation; no speaker identity attempts, rehosting, or resharing; 328 validated, 366 invalidated, 65,569 unresolved; official test split 42; no selected project manifest."
+        },
+        {
+          "title": "Pinned BuzzASR Sindhi model card",
+          "url": "https://huggingface.co/BuzzASR/sindhi",
+          "evidence_type": "Model author statement; pinned project revision 8e85f09a5c0b17c635ffa8fd124b1efa56fcb5c7",
+          "relevant_facts": "Declares FLEURS, Common Voice Corpus 25.0, and text-only Goldfish training; Common Voice 27 exposure remains unknown, not clear."
+        },
+        {
+          "title": "Authoritative project rights record",
+          "url": "../configs/voice_corpora_v2_readiness.json",
+          "evidence_type": "Local project registry",
+          "relevant_facts": "Local ASR evaluation allowed by stated intended use; evaluation status REFERENCE_ONLY; acquisition blocked until a selected manifest is frozen."
+        }
+      ],
+      "required_human_evidence": [
+        "Freeze an eligible metadata selection before acquisition; keep the 42-clip official test split as a candidate, not a frozen sample.",
+        "Document source-level checkpoint exposure and exact release-family overlap for BuzzASR; do not infer independence from version numbers alone.",
+        "Record reviewer acceptance of the small validated sample and report uncertainty; do not substitute unresolved rows without human transcript review."
+      ]
+    },
+    {
+      "source_key": "sindhi_holdout_v1",
+      "record_date": "2026-10-12",
+      "reviewer": {
+        "technical_preparer": "Codex",
+        "authorized_human_clearance_reviewer": "NOT_ASSIGNED",
+        "source_owner_response": "PER_RECORD_SPEAKER_PERMISSION_NOT_YET_OBTAINED",
+        "legal_review": "NOT_PERFORMED"
+      },
+      "decision": "PROTOCOL_APPROVED_DATA_PENDING_NOT_CLEARED_FOR_EVALUATION",
+      "clearance_decision_date": null,
+      "dataset_identity": {
+        "protocol": "SINDHI-HOLDOUT-V1",
+        "protocol_status": "APPROVED_DATA_PENDING",
+        "required_recordings": 100,
+        "current_recordings": 0,
+        "required_speakers": 10,
+        "current_speakers": 0,
+        "selected_manifest_status": "NOT_FROZEN"
+      },
+      "permitted_use": {
+        "protocol_statement": "Local ASR evaluation only with recorded per-speaker permission and the approved protocol.",
+        "project_approved_use": "No recording exists; no audio use is currently permitted by the project.",
+        "distribution": "Public distribution is not authorized without separate explicit permission and a license."
+      },
+      "checkpoint_exposure": {
+        "whisper_large_v3": "UNKNOWN_PENDING_SPEAKER_ATTESTATION",
+        "mms_1b_all": "UNKNOWN_PENDING_SPEAKER_ATTESTATION",
+        "buzzasr_sindhi": "UNKNOWN_PENDING_SPEAKER_ATTESTATION"
+      },
+      "unresolved_restrictions": [
+        "There are zero recordings and zero speakers in the holdout; protocol approval is not data clearance.",
+        "Every contributor must provide documented local-evaluation permission and required source attestations before a recording is eligible.",
+        "No speaker identity may be inferred; pseudonymous identifiers and access controls are required.",
+        "Do not source recordings from FLEURS, Common Voice, synthetic/TTS, translated benchmarks, or model-generated speech; actual contributor attestations remain pending.",
+        "Whisper/MMS/BuzzASR speaker exposure remains UNKNOWN until source attestations and a frozen holdout are reviewed."
+      ],
+      "supporting_evidence": [
+        {
+          "title": "SINDHI-HOLDOUT-V1 collection protocol",
+          "url": "../docs/SINDHI-HOLDOUT-V1.md",
+          "evidence_type": "Approved local protocol",
+          "relevant_facts": "Requires 50 human-authored utterances, 100 fresh recordings, ten pseudonymous speakers, per-record permission, and source attestations; current data remains pending."
+        },
+        {
+          "title": "Authoritative project rights record",
+          "url": "../configs/voice_corpora_v2_readiness.json",
+          "evidence_type": "Local project registry",
+          "relevant_facts": "Local evaluation allowed only with recorded speaker permission; public distribution requires separate explicit permission and license; current recordings 0/100; evaluation NOT_RUN."
+        }
+      ],
+      "required_human_evidence": [
+        "Recorded consent and local-use permission for every speaker/recording under the approved protocol.",
+        "Completed source attestations and transcript review, followed by the existing independent holdout freeze/verification.",
+        "A human reviewer must confirm the permission records; no evaluation before complete freeze."
+      ]
+    }
+  ]
+}

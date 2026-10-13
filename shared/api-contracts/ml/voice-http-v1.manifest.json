@@ -1,0 +1,8 @@
+{
+  "contract_version": "voice-http-v1",
+  "openapi_path": "configs/api/voice-http-v1.openapi.json",
+  "openapi_sha256": "c6dabddb8325c012d1da3f85d27cfa6a283cdd36c4f7a643335ba8b7eea589fd",
+  "scope": "internal-transcription-only-no-search-or-production-approval",
+  "serialization": "UTF-8, sorted JSON keys, indent=2, LF, one trailing newline",
+  "status": "FROZEN"
+}

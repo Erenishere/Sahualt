@@ -1,0 +1,11 @@
+{
+  "source": "usman8/khaadis-clothes-data-with-images",
+  "dataset_version": "1",
+  "source_url": "https://www.kaggle.com/api/v1/datasets/download/usman8/khaadis-clothes-data-with-images?datasetVersionNumber=1",
+  "archive_sha256": "f268adbd70a165d1c1ed820ce68968aa6e4954581eb44496c9b508b813c3064e",
+  "archive_bytes": 237227445,
+  "product_records": 400,
+  "image_records": 2109,
+  "products_without_images": [],
+  "orphaned_images": []
+}

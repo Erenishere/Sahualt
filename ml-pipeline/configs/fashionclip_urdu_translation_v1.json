@@ -1,0 +1,11 @@
+{
+  "adapter_version": "FASHIONCLIP-URDU-TRANSLATION-ADAPTER-V1",
+  "enabled": false,
+  "implementation": "local-transformers-seq2seq",
+  "model_id": null,
+  "revision": null,
+  "source_language_code": "urd_Arab",
+  "target_language_code": "eng_Latn",
+  "loading": "local-files-only",
+  "note": "Enable only after selecting a real translation checkpoint and pinning its immutable 40-character revision. No lookup-table translator is provided."
+}

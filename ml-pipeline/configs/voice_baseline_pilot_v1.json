@@ -1,0 +1,79 @@
+{
+  "schema_version": "voice-baseline-pilot-protocol-v1",
+  "protocol_id": "VOICE-BASELINE-PILOT-V1",
+  "status": "PILOT_ONLY",
+  "targets": {
+    "ur": {"recordings": 30, "native_speakers_ideal": 5},
+    "ur_en": {"recordings": 30, "native_speakers_ideal": 5},
+    "sd": {"recordings": 30, "native_speakers_ideal": 5},
+    "ps": {"recordings": 30, "native_speakers_ideal": 5}
+  },
+  "selection": {
+    "algorithm": "sha256-round-robin-speaker-v1",
+    "max_recordings_per_group": 30,
+    "speaker_balance": "deterministic_round_robin_before_second_recording_per_speaker",
+    "shortfall_policy": "use_all_eligible_records_and_report_actual_n"
+  },
+  "models": {
+    "whisper-large-v3-turbo": {
+      "repository": "openai/whisper-large-v3-turbo",
+      "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "license": "mit",
+      "pin_evidence": "Official Hugging Face model repository HEAD observed 2026-10-12; separate pilot pin, EVAL-VOICE-V1 remains on large-v3."
+    },
+    "mms-1b-all": {
+      "repository": "facebook/mms-1b-all",
+      "revision": "3d33597edbdaaba14a8e858e2c8caa76e3cec0cd",
+      "license": "cc-by-nc-4.0",
+      "pin_evidence": "configs/eval_voice_v1.json"
+    },
+    "buzzasr-sindhi": {
+      "repository": "BuzzASR/sindhi",
+      "revision": "8e85f09a5c0b17c635ffa8fd124b1efa56fcb5c7",
+      "license": "mit",
+      "pin_evidence": "configs/voice_alt_v1_models.json"
+    },
+    "pashto-ghag": {
+      "repository": "Nasimbahar/pashto-ghag-whisper-medium-asr",
+      "revision": "ed20e00d47d0852ed24f07b4370c0bdac2e5f241",
+      "license": "apache-2.0",
+      "pin_evidence": "configs/voice_alt_v1_models.json"
+    }
+  },
+  "model_matrix": {
+    "ur": ["whisper-large-v3-turbo"],
+    "ur_en": ["whisper-large-v3-turbo"],
+    "sd": ["mms-1b-all", "buzzasr-sindhi"],
+    "ps": ["mms-1b-all", "pashto-ghag"]
+  },
+  "inference": {
+    "device": "cpu",
+    "dtype": "float32",
+    "offline_only": true,
+    "task": "transcribe",
+    "sampling": false,
+    "whisper_num_beams": 1,
+    "retry_count": 0,
+    "no_training_or_tuning": true,
+    "no_checkpoint_mutation": true
+  },
+  "normalization": {
+    "version": "voice-baseline-pilot-script-normalization-v1",
+    "wer": "NFC; casefold Latin text; normalize Arabic/Persian digits to ASCII; ignore thousands separators between digits; replace Unicode punctuation with spaces; collapse whitespace; preserve script and Arabic combining marks.",
+    "cer": "Codepoint Levenshtein over the same normalized text, including normalized spaces.",
+    "script_fidelity": "Report detected Latin, Arabic, mixed, or unknown script separately; do not transliterate the primary reference automatically.",
+    "roman_urdu": "Optional, separately human-verified Roman Urdu reference is scored in its own column; original reference remains unchanged."
+  },
+  "commerce_evaluation": {
+    "optional": true,
+    "intent": "Score retention of human-annotated intent cue spans; the ASR-only pilot has no intent classifier, so this is not intent classification accuracy.",
+    "brands": "Exact annotated brand-name mention preservation in the transcript.",
+    "prices": "Exact numeric amount extraction from spoken digit sequences; number-word conversion and currency classification are not claimed."
+  },
+  "reporting": {
+    "label": "PILOT",
+    "production_promotion": false,
+    "replace_eval_voice_v1": false,
+    "error_examples": "Include only when participant consent permits de-identified transcript examples and a human reviewer approves the specific example."
+  }
+}

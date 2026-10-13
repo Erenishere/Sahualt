@@ -1,0 +1,60 @@
+{
+  "protocol_version": "EVAL-VOICE-V1",
+  "protocol_status": "PREREGISTERED",
+  "dataset_id": "FLEURS-VOICE-V1",
+  "source_lock": "configs/fleurs_sources_v1.json",
+  "split": "test",
+  "samples_per_language": 50,
+  "sample_count": 200,
+  "language_configs": {"en": "en_us", "ur": "ur_pk", "sd": "sd_in", "ps": "ps_af"},
+  "selection": {
+    "version": "fleurs-selection-v1",
+    "seed": 20260912,
+    "key": "sha256(EVAL-VOICE-V1|20260912|config|filename),filename",
+    "unique_sentence_ids_per_language": true,
+    "conflicting_sentence_references": "exclude-entire-sentence-group",
+    "selected_audio_failure": "fail-no-replacement",
+    "eligibility": "valid-identity-and-reference-and-1600-to-480000-declared-frames"
+  },
+  "reference": {
+    "primary_source_field": "raw_transcription",
+    "preserve_exact_published_text": true,
+    "provenance": "published-human-authored-read-script-not-new-verbatim-annotation"
+  },
+  "audio_preparation": {
+    "version": "fleurs-pcm16-v1",
+    "source": "mono-16000Hz-PCM16-or-PCM32-or-IEEE-float32-WAV",
+    "target": "mono-16000Hz-little-endian-PCM16-RIFF-WAV",
+    "quantization": "float64-scale-then-nearest-ties-even-then-clip[-32768,32767]",
+    "resample": false,
+    "denoise": false,
+    "trim": false,
+    "source_frame_count_must_match_metadata": true
+  },
+  "scoring": {
+    "version": "voice-asr-scoring-v1",
+    "normalization": "voice-nfc-whitespace-v1-then-casefold-then-Unicode-P-punctuation-to-space-then-collapse-whitespace",
+    "wer": "whitespace-word-Levenshtein-edits/reference-words-micro-per-language",
+    "cer": "codepoint-Levenshtein-edits/reference-codepoints-including-normalized-spaces-micro-per-language",
+    "failures": "explicit-failure-plus-all-reference-units-deleted-no-success-only-dropping",
+    "overall": "equal-language-macro-average-of-per-language-micro-WER-and-CER",
+    "uncertainty": "paired-utterance-bootstrap-per-language-2000-draws-seed-20260912-percentile95",
+    "strict_scaffold_metrics": "optional-secondary-not-primary"
+  },
+  "models": {
+    "whisper": {"repository": "openai/whisper-large-v3", "revision": "06f233fe06e710322aca913c1bc4249a0d71fce1"},
+    "mms": {"repository": "facebook/mms-1b-all", "revision": "3d33597edbdaaba14a8e858e2c8caa76e3cec0cd"}
+  },
+  "experiment": {
+    "no_training_or_tuning": true,
+    "no_model_execution_before_subset_freeze": true,
+    "same_prepared_audio_for_both_models": true,
+    "language_is_declared": true,
+    "device": "cpu-float32-primary-CUDA-separate-if-explicitly-added",
+    "warm_latency": "one-unscored-first-selected-sample-warmup-then-one-timed-call-per-frozen-sample-ordered-by-sample_id",
+    "cold_latency": "fresh-process-base-and-adapter-load-separate-from-warm-STT",
+    "latency_summary": "per-language-mean-median-p95-STT-ms-and-real-time-factor-no-SLO-threshold",
+    "acceptance": "data-integrity-and-complete-reporting-not-an-invented-accuracy-target",
+    "domain_challenge_set": "deferred-separate-not-mixed-with-FLEURS"
+  }
+}
